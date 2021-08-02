@@ -19,8 +19,8 @@ public class ItemSwettyBall extends Item {
 	public boolean onItemUse(ItemStack stackIn, EntityPlayer playerIn, World worldIn, int x, int y, int z, int facing, float hitX, float hitY, float hitZ) {
 		ItemStack heldItem = playerIn.getHeldItem();
 
-		if (worldIn.getBlock(x, y, z) == BlocksAether.aether_dirt) {
-			worldIn.setBlock(x, y, z, BlocksAether.aether_grass);
+		if (worldIn.getBlock(x, y, z) == BlocksAether.aetherDirt) {
+			worldIn.setBlock(x, y, z, BlocksAether.aetherGrass);
 		} else if (worldIn.getBlock(x, y, z) == Blocks.dirt) {
 			worldIn.setBlock(x, y, z, Blocks.grass);
 		} else {

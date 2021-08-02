@@ -8,17 +8,17 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ChatComponentText;
 
-public class GuiDialogue extends GuiScreen {
+public class GUIDialogue extends GuiScreen {
 
 	private ArrayList<DialogueOption> dialogueOptions = new ArrayList<DialogueOption>();
 
 	private String dialogue;
 
-	public GuiDialogue(String dialogue) {
+	public GUIDialogue(String dialogue) {
 		this.dialogue = dialogue;
 	}
 
-	public GuiDialogue(String dialogue, DialogueOption... options) {
+	public GUIDialogue(String dialogue, DialogueOption... options) {
 		this(dialogue);
 
 		this.addDialogueOptions(options);

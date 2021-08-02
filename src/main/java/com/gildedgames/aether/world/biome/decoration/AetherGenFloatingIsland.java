@@ -57,34 +57,34 @@ public class AetherGenFloatingIsland extends WorldGenerator {
 			world.setBlock(j - 1, k + 1, l - 1, BlocksAether.holystone);
 
 			for (int z = -2; z < 3; ++z) {
-				world.setBlock(j, k + 2, l + z, BlocksAether.aether_grass);
+				world.setBlock(j, k + 2, l + z, BlocksAether.aetherGrass);
 			}
 
 			for (int x = -2; x < 3; ++x) {
-				world.setBlock(x + j, k + 2, l, BlocksAether.aether_grass);
+				world.setBlock(x + j, k + 2, l, BlocksAether.aetherGrass);
 			}
 
 			for (int x = -1; x < 2; ++x) {
 				for (int z = 1; z > -2; --z) {
 					if (x != 0 || z != 0) {
-						world.setBlock(j + x, k + 2, l + z, BlocksAether.aether_grass);
+						world.setBlock(j + x, k + 2, l + z, BlocksAether.aetherGrass);
 					}
 				}
 			}
 
-			world.setBlock(j + 1, k + 2, l + 1, BlocksAether.aether_grass);
-			world.setBlock(j - 1, k + 2, l - 1, BlocksAether.aether_grass);
+			world.setBlock(j + 1, k + 2, l + 1, BlocksAether.aetherGrass);
+			world.setBlock(j - 1, k + 2, l - 1, BlocksAether.aetherGrass);
 
 			world.setBlock(j, k + 10, l, setRandomBlock(world, random));
 
 			for (int z = -1; z < 2; ++z) {
 				if (z != 0)
-					world.setBlock(j, k + 5, l + z, BlocksAether.skyroot_log);
+					world.setBlock(j, k + 5, l + z, BlocksAether.skyrootLog);
 			}
 
 			for (int x = -1; x < 2; ++x) {
 				if (x != 0)
-					world.setBlock(j + x, k + 5, l, BlocksAether.skyroot_log);
+					world.setBlock(j + x, k + 5, l, BlocksAether.skyrootLog);
 			}
 
 			for (int z = -2; z < 3; ++z) {
@@ -171,12 +171,12 @@ public class AetherGenFloatingIsland extends WorldGenerator {
 
 			for (int z = -1; z < 2; ++z) {
 				if (z != 0)
-					world.setBlock(j, k + 8, l + z, BlocksAether.skyroot_log);
+					world.setBlock(j, k + 8, l + z, BlocksAether.skyrootLog);
 			}
 
 			for (int x = -1; x < 2; ++x) {
 				if (x != 0)
-					world.setBlock(j + x, k + 8, l, BlocksAether.skyroot_log);
+					world.setBlock(j + x, k + 8, l, BlocksAether.skyrootLog);
 			}
 
 			for (int z = -2; z < 3; ++z) {
@@ -211,7 +211,7 @@ public class AetherGenFloatingIsland extends WorldGenerator {
 			}
 
 			for (int y = k + 3; y <= k + 9; y++) {
-				world.setBlock(j, y, l, BlocksAether.skyroot_log);
+				world.setBlock(j, y, l, BlocksAether.skyrootLog);
 			}
 
 			return true;
@@ -224,10 +224,10 @@ public class AetherGenFloatingIsland extends WorldGenerator {
 		int nextInt = random.nextInt(3);
 
 		if (nextInt == 0) {
-			return BlocksAether.crystal_fruit_leaves;
+			return BlocksAether.crystalFruitLeaves;
 		}
 
-		return BlocksAether.crystal_leaves;
+		return BlocksAether.crystalLeaves;
 	}
 
 }

@@ -48,7 +48,7 @@ public class AetherBiome extends BiomeGenBase {
 
 		list.clear();
 
-		this.topBlock = BlocksAether.aether_grass;
+		this.topBlock = BlocksAether.aetherGrass;
 		this.fillerBlock = BlocksAether.holystone;
 
 		this.setBiomeName("Aether");
@@ -77,8 +77,8 @@ public class AetherBiome extends BiomeGenBase {
 
 	@Override
 	public void addDefaultFlowers() {
-		this.flowers.add(new FlowerEntry(BlocksAether.white_flower, 0, 20));
-		this.flowers.add(new FlowerEntry(BlocksAether.purple_flower, 0, 10));
+		this.flowers.add(new FlowerEntry(BlocksAether.whiteFlower, 0, 20));
+		this.flowers.add(new FlowerEntry(BlocksAether.purpleFlower, 0, 10));
 	}
 
 	@Override

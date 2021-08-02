@@ -83,8 +83,8 @@ public class TeleporterAether extends Teleporter {
 					double d5 = (double) l1 + 0.5D - entityIn.posZ;
 
 					for (int i2 = this.worldServerInstance.getActualHeight() - 1; i2 >= 0; --i2) {
-						if (this.worldServerInstance.getBlock(l3, i2, l1) == BlocksAether.aether_portal) {
-							while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == BlocksAether.aether_portal) {
+						if (this.worldServerInstance.getBlock(l3, i2, l1) == BlocksAether.aetherPortal) {
+							while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == BlocksAether.aetherPortal) {
 								--i2;
 							}
 
@@ -114,19 +114,19 @@ public class TeleporterAether extends Teleporter {
 			d7 = (double) k + 0.5D;
 			int i4 = -1;
 
-			if (this.worldServerInstance.getBlock(i - 1, j, k) == BlocksAether.aether_portal) {
+			if (this.worldServerInstance.getBlock(i - 1, j, k) == BlocksAether.aetherPortal) {
 				i4 = 2;
 			}
 
-			if (this.worldServerInstance.getBlock(i + 1, j, k) == BlocksAether.aether_portal) {
+			if (this.worldServerInstance.getBlock(i + 1, j, k) == BlocksAether.aetherPortal) {
 				i4 = 0;
 			}
 
-			if (this.worldServerInstance.getBlock(i, j, k - 1) == BlocksAether.aether_portal) {
+			if (this.worldServerInstance.getBlock(i, j, k - 1) == BlocksAether.aetherPortal) {
 				i4 = 3;
 			}
 
-			if (this.worldServerInstance.getBlock(i, j, k + 1) == BlocksAether.aether_portal) {
+			if (this.worldServerInstance.getBlock(i, j, k + 1) == BlocksAether.aetherPortal) {
 				i4 = 1;
 			}
 
@@ -379,7 +379,7 @@ public class TeleporterAether extends Teleporter {
 					i4 = j2 + k3;
 					j4 = k2 + (j3 - 1) * l2;
 					flag = j3 == 0 || j3 == 3 || k3 == -1 || k3 == 3;
-					this.worldServerInstance.setBlock(l3, i4, j4, (Block) (flag ? Blocks.glowstone : BlocksAether.aether_portal), 0, 2);
+					this.worldServerInstance.setBlock(l3, i4, j4, (Block) (flag ? Blocks.glowstone : BlocksAether.aetherPortal), 0, 2);
 				}
 			}
 

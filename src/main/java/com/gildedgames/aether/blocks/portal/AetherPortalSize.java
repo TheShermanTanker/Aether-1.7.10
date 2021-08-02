@@ -94,7 +94,7 @@ public class AetherPortalSize {
 					break label24;
 				}
 
-				if (block == BlocksAether.aether_portal) {
+				if (block == BlocksAether.aetherPortal) {
 					++this.portalBlockCount;
 				}
 
@@ -136,7 +136,7 @@ public class AetherPortalSize {
 	}
 
 	protected boolean isEmptyBlock(Block blockIn) {
-		return blockIn.getMaterial() == Material.air || blockIn == Blocks.fire || blockIn == BlocksAether.aether_portal;
+		return blockIn.getMaterial() == Material.air || blockIn == Blocks.fire || blockIn == BlocksAether.aetherPortal;
 	}
 
 	public boolean isValid() {
@@ -150,7 +150,7 @@ public class AetherPortalSize {
 
 			for (int l = 0; l < this.height; ++l) {
 				int i1 = this.bottomLeft.posY + l;
-				this.world.setBlock(j, i1, k, BlocksAether.aether_portal, this.axis, 2);
+				this.world.setBlock(j, i1, k, BlocksAether.aetherPortal, this.axis, 2);
 			}
 		}
 	}

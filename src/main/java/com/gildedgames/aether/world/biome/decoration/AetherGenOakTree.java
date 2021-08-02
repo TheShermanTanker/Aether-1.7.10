@@ -27,9 +27,9 @@ public class AetherGenOakTree extends WorldGenAbstractTree {
 			i -= directionX;
 			k -= directionZ;
 
-			if (world.getBlock(x, y, z) == BlocksAether.golden_oak_leaves) {
-				world.setBlock(x, y, z, BlocksAether.golden_oak_log);
-				world.setBlock(i, y, k, BlocksAether.golden_oak_log);
+			if (world.getBlock(x, y, z) == BlocksAether.goldenOakLeaves) {
+				world.setBlock(x, y, z, BlocksAether.goldenOakLog);
+				world.setBlock(i, y, k, BlocksAether.goldenOakLog);
 			}
 		}
 
@@ -38,7 +38,7 @@ public class AetherGenOakTree extends WorldGenAbstractTree {
 
 	@Override
 	public boolean generate(World world, Random random, int x, int y, int z) {
-		if (world.getBlock(x, y - 1, z) != BlocksAether.aether_grass && world.getBlock(x, y - 1, z) != BlocksAether.aether_dirt) {
+		if (world.getBlock(x, y - 1, z) != BlocksAether.aetherGrass && world.getBlock(x, y - 1, z) != BlocksAether.aetherDirt) {
 			return false;
 		}
 
@@ -48,7 +48,7 @@ public class AetherGenOakTree extends WorldGenAbstractTree {
 			for (int y1 = y + 5; y1 < y + 12; y1++) {
 				for (int z1 = z - 3; z1 < z + 4; z1++) {
 					if ((x1 - x) * (x1 - x) + (y1 - y - 8) * (y1 - y - 8) + (z1 - z) * (z1 - z) < 12 + random.nextInt(5) && world.isAirBlock(x1, y1, z1)) {
-						world.setBlock(x1, y1, z1, BlocksAether.golden_oak_leaves);
+						world.setBlock(x1, y1, z1, BlocksAether.goldenOakLeaves);
 					}
 				}
 			}
@@ -61,7 +61,7 @@ public class AetherGenOakTree extends WorldGenAbstractTree {
 				}
 			}
 
-			world.setBlock(x, y + n, z, BlocksAether.golden_oak_log);
+			world.setBlock(x, y + n, z, BlocksAether.goldenOakLog);
 		}
 
 		return true;

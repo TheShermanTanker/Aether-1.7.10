@@ -94,7 +94,7 @@ public class ContainerIncubator extends Container {
 			itemstack = itemstack1.copy();
 
 			if (index != 1 && index != 0) {
-				if (itemstack.getItem() == Item.getItemFromBlock(BlocksAether.ambrosium_torch) && this.mergeItemStack(itemstack1, 1, 2, false)) {
+				if (itemstack.getItem() == Item.getItemFromBlock(BlocksAether.ambrosiumTorch) && this.mergeItemStack(itemstack1, 1, 2, false)) {
 					return itemstack;
 				} else if (itemstack.getItem() == ItemsAether.moaEgg && this.mergeItemStack(itemstack1, 0, 1, false)) {
 					return itemstack;

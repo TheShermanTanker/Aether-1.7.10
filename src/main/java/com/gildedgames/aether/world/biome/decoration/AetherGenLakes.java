@@ -18,12 +18,12 @@ public class AetherGenLakes extends WorldGenerator {
 
 	@Override
 	public boolean generate(World world, Random random, int x, int y, int z) {
-		if (world.getBlock(x, y, z) == BlocksAether.carved_stone
-				|| world.getBlock(x, y, z) == BlocksAether.locked_carved_stone
-				|| world.getBlock(x, y, z) == BlocksAether.angelic_stone
-				|| world.getBlock(x, y, z) == BlocksAether.locked_angelic_stone
-				|| world.getBlock(x, y, z) == BlocksAether.hellfire_stone
-				|| world.getBlock(x, y, z) == BlocksAether.locked_hellfire_stone)
+		if (world.getBlock(x, y, z) == BlocksAether.carvedStone
+				|| world.getBlock(x, y, z) == BlocksAether.lockedCarvedStone
+				|| world.getBlock(x, y, z) == BlocksAether.angelicStone
+				|| world.getBlock(x, y, z) == BlocksAether.lockedAngelicStone
+				|| world.getBlock(x, y, z) == BlocksAether.hellfireStone
+				|| world.getBlock(x, y, z) == BlocksAether.lockedHellfireStone)
 		{
 			return false;
 		}
@@ -103,8 +103,8 @@ public class AetherGenLakes extends WorldGenerator {
 			for (i1 = 0; i1 < 16; ++i1) {
 				for (j2 = 0; j2 < 16; ++j2) {
 					for (j1 = 4; j1 < 8; ++j1) {
-						if (aboolean[(i1 * 16 + j2) * 8 + j1] && world.getBlock(x + i1, y + j1 - 1, z + j2) == BlocksAether.aether_dirt && world.getSavedLightValue(EnumSkyBlock.Sky, x + i1, y + j1, z + j2) > 0) {
-							world.setBlock(x + i1, y + j1 - 1, z + j2, BlocksAether.aether_grass, 0, 2);
+						if (aboolean[(i1 * 16 + j2) * 8 + j1] && world.getBlock(x + i1, y + j1 - 1, z + j2) == BlocksAether.aetherDirt && world.getSavedLightValue(EnumSkyBlock.Sky, x + i1, y + j1, z + j2) > 0) {
+							world.setBlock(x + i1, y + j1 - 1, z + j2, BlocksAether.aetherGrass, 0, 2);
 						}
 					}
 				}

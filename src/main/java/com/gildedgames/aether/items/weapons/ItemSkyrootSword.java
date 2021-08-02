@@ -16,7 +16,7 @@ public class ItemSkyrootSword extends ItemSword {
 
 	@Override
 	public boolean getIsRepairable(ItemStack repairingItem, ItemStack material) {
-		return material.getItem() == Item.getItemFromBlock(BlocksAether.golden_oak_log) || material.getItem() == Item.getItemFromBlock(BlocksAether.skyroot_log) || material.getItem() == Item.getItemFromBlock(BlocksAether.skyroot_planks);
+		return material.getItem() == Item.getItemFromBlock(BlocksAether.goldenOakLog) || material.getItem() == Item.getItemFromBlock(BlocksAether.skyrootLog) || material.getItem() == Item.getItemFromBlock(BlocksAether.skyrootPlanks);
 	}
 
 }

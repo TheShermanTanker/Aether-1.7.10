@@ -29,12 +29,9 @@ public class EntityDartPoison extends EntityDartBase {
     public void onDartHit(MovingObjectPosition movingobjectposition) {
         super.onDartHit(movingobjectposition);
 
-        if (!worldObj.isRemote)
-        {
-            if (movingobjectposition.entityHit != null)
-            {
-                if (movingobjectposition.entityHit instanceof EntityLivingBase)
-                {
+        if (!worldObj.isRemote) {
+            if (movingobjectposition.entityHit != null) {
+                if (movingobjectposition.entityHit instanceof EntityLivingBase) {
                     ((EntityLivingBase) movingobjectposition.entityHit).addPotionEffect(new EffectInebriation(PotionInebriation.inebriation.id, 500, 0));
                 }
             }

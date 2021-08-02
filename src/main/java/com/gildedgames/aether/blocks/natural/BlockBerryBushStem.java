@@ -31,7 +31,7 @@ public class BlockBerryBushStem extends BlockAetherFlower implements IGrowable {
 		super.updateTick(world, x, y, z, random);
 
 		if (world.getBlockLightValue(x, y + 1, z) >= 9 && random.nextInt(60) == 0) {
-			world.setBlock(x, y, z, BlocksAether.berry_bush);
+			world.setBlock(x, y, z, BlocksAether.berryBush);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class BlockBerryBushStem extends BlockAetherFlower implements IGrowable {
 
 	@Override
 	public void func_149853_b(World world, Random random, int x, int y, int z) {
-		world.setBlock(x, y, z, BlocksAether.berry_bush);
+		world.setBlock(x, y, z, BlocksAether.berryBush);
 	}
 
 }

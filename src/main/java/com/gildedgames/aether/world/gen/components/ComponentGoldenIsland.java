@@ -37,7 +37,7 @@ public class ComponentGoldenIsland extends AetherStructure {
 			for (int l1 = 24; l1 >= -j1; l1--) {
 				for (int k2 = -j1; k2 <= j1; k2++) {
 					Block state = this.getBlockStateWithOffset(k1, l1, k2);
-					if (state == BlocksAether.locked_angelic_stone && ++i1 > 24 / 2) {
+					if (state == BlocksAether.lockedAngelicStone && ++i1 > 24 / 2) {
 						return;
 					}
 				}
@@ -63,9 +63,9 @@ public class ComponentGoldenIsland extends AetherStructure {
 
 					if (Math.sqrt(k3 * k3 + i4 * i4 + k4 * k4) <= 24.0D) {
 						if (BlocksAether.isGood(this.getBlockStateWithOffset(i2, l2 + 1, i3)) && l2 > 4) {
-							this.setBlockWithOffset(i2, l2, i3, BlocksAether.aether_grass, 3);
-							this.setBlockWithOffset(i2, l2 - 1, i3, BlocksAether.aether_dirt, 0);
-							this.setBlockWithOffset(i2, l2 - (1 + this.random.nextInt(2)), i3, BlocksAether.aether_dirt, 0);
+							this.setBlockWithOffset(i2, l2, i3, BlocksAether.aetherGrass, 3);
+							this.setBlockWithOffset(i2, l2 - 1, i3, BlocksAether.aetherDirt, 0);
+							this.setBlockWithOffset(i2, l2 - (1 + this.random.nextInt(2)), i3, BlocksAether.aetherDirt, 0);
 
 							if (l2 >= 24 / 2) {
 								int j5 = this.random.nextInt(48);
@@ -140,7 +140,7 @@ public class ComponentGoldenIsland extends AetherStructure {
 
 								Block block = this.getBlockStateWithOffset(k2, l2, i3);
 
-								if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D && (block == BlocksAether.mossy_holystone || block == BlocksAether.holystone || block == BlocksAether.aether_grass || block == BlocksAether.aether_dirt)) {
+								if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D && (block == BlocksAether.mossyHolystone || block == BlocksAether.holystone || block == BlocksAether.aetherGrass || block == BlocksAether.aetherDirt)) {
 									this.setBlockWithOffset(k2, l2, i3, Blocks.air, 0);
 								}
 							}

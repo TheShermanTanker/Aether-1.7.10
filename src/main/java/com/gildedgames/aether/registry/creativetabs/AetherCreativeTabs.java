@@ -22,7 +22,7 @@ public class AetherCreativeTabs {
 			misc = new AetherTab("aether_misc");
 
 	public static void initialization() {
-		blocks.setIcon(new ItemStack(BlocksAether.aether_grass));
+		blocks.setIcon(new ItemStack(BlocksAether.aetherGrass));
 		tools.setIcon(new ItemStack(ItemsAether.gravititePickaxe));
 		weapons.setIcon(new ItemStack(ItemsAether.gravititeSword));
 		armor.setIcon(new ItemStack(ItemsAether.gravititeHelmet));

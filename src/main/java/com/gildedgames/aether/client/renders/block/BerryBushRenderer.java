@@ -19,7 +19,7 @@ public class BerryBushRenderer implements ISimpleBlockRenderingHandler {
 		Tessellator tessellator = Tessellator.instance;
 		tessellator.startDrawingQuads();
 		tessellator.setNormal(0.0F, -1F, 0.0F);
-		renderer.drawCrossedSquares(BlocksAether.berry_bush_stem.getIcon(metadata, 0), -0.5D, -0.5D, -0.5D, 1.0F);
+		renderer.drawCrossedSquares(BlocksAether.berryBushStem.getIcon(metadata, 0), -0.5D, -0.5D, -0.5D, 1.0F);
 		tessellator.draw();
 		block.setBlockBoundsForItemRender();
 		GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
@@ -61,7 +61,7 @@ public class BerryBushRenderer implements ISimpleBlockRenderingHandler {
 
 	@Override
 	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
-		renderer.renderCrossedSquares(BlocksAether.berry_bush_stem, x, y, z);
+		renderer.renderCrossedSquares(BlocksAether.berryBushStem, x, y, z);
 		renderer.renderStandardBlock(block, x, y, z);
 
 		return true;

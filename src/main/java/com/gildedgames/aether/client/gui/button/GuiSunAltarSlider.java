@@ -9,7 +9,7 @@ import org.lwjgl.opengl.GL11;
 import com.gildedgames.aether.network.AetherNetwork;
 import com.gildedgames.aether.network.packets.PacketSetTime;
 
-public class GuiSunAltarSlider extends GuiButton {
+public class GUISunAltarSlider extends GuiButton {
 
 	public float sliderValue;
 
@@ -17,7 +17,7 @@ public class GuiSunAltarSlider extends GuiButton {
 
 	private World world;
 
-	public GuiSunAltarSlider(World world, int par2, int par3, String par5Str) {
+	public GUISunAltarSlider(World world, int par2, int par3, String par5Str) {
 		super(1, par2, par3, 150, 20, par5Str);
 
 		this.world = world;

@@ -6,9 +6,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
 
-public class GuiHaloButton extends GuiButton
+public class GUIHaloButton extends GuiButton
 {
-    public GuiHaloButton(int xPos, int yPos)
+    public GUIHaloButton(int xPos, int yPos)
     {
         super(201, xPos, yPos, 150, 20, I18n.format("gui.button.halo"));
     }

@@ -18,12 +18,12 @@ public class ItemAmbrosiumShard extends Item {
 	public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, int x, int y, int z, int facing, float hitX, float hitY, float hitZ) {
 		ItemStack heldItem = playerIn.getHeldItem();
 
-		if (worldIn.getBlock(x, y, z) == BlocksAether.aether_grass) {
+		if (worldIn.getBlock(x, y, z) == BlocksAether.aetherGrass) {
 			if (!playerIn.capabilities.isCreativeMode) {
 				--heldItem.stackSize;
 			}
 
-			worldIn.setBlock(x, y, z, BlocksAether.enchanted_aether_grass);
+			worldIn.setBlock(x, y, z, BlocksAether.enchantedAetherGrass);
 
 			return true;
 		}

@@ -244,8 +244,8 @@ public class PlayerAether implements IPlayerAether {
 			{
 				AxisAlignedBB playerBounding = this.getEntity().boundingBox;
 
-				if (this.getEntity().worldObj.getBlock((int) playerBounding.minX, (int) playerBounding.minY, (int) playerBounding.minZ) != BlocksAether.aether_portal
-						&& this.getEntity().worldObj.getBlock((int) playerBounding.minX, (int) playerBounding.minY, (int) playerBounding.minZ) != BlocksAether.aether_portal)
+				if (this.getEntity().worldObj.getBlock((int) playerBounding.minX, (int) playerBounding.minY, (int) playerBounding.minZ) != BlocksAether.aetherPortal
+						&& this.getEntity().worldObj.getBlock((int) playerBounding.minX, (int) playerBounding.minY, (int) playerBounding.minZ) != BlocksAether.aetherPortal)
 				{
 					this.inPortal = false;
 				}
@@ -276,7 +276,7 @@ public class PlayerAether implements IPlayerAether {
 		else {
             this.prevTimeInPortal = this.timeInPortal;
 
-            if (this.isInsideBlock(BlocksAether.aether_portal))
+            if (this.isInsideBlock(BlocksAether.aetherPortal))
             {
                 this.timeInPortal += 0.0125F;
 
@@ -314,7 +314,7 @@ public class PlayerAether implements IPlayerAether {
 			{
 				if (player.dimension == AetherConfig.getAetherDimensionID())
 				{
-					if (player.worldObj.getBlock(this.bedLocation.posX, this.bedLocation.posY, this.bedLocation.posZ) != BlocksAether.skyroot_bed)
+					if (player.worldObj.getBlock(this.bedLocation.posX, this.bedLocation.posY, this.bedLocation.posZ) != BlocksAether.skyrootBed)
 					{
 						this.setBedLocation(null);
 					}

@@ -222,7 +222,7 @@ public class AetherOverlay {
 		GL11.glDepthMask(false);
 		OpenGlHelper.glBlendFunc(770, 771, 1, 0);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, timeInPortal);
-		IIcon iicon = BlocksAether.aether_portal.getBlockTextureFromSide(1);
+		IIcon iicon = BlocksAether.aetherPortal.getBlockTextureFromSide(1);
 		Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.locationBlocksTexture);
 		float f = iicon.getMinU();
 		float f1 = iicon.getMinV();

@@ -55,7 +55,7 @@ public class AetherGenCave extends WorldGenerator {
 								double d14 = (((double) i3 + 0.5D) - d8) / (d10 / 2D);
 								Block block = world.getBlock(k2, l2, i3);
 
-								if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D && (block == BlocksAether.mossy_holystone || block == BlocksAether.holystone || block == BlocksAether.aether_grass || block == BlocksAether.aether_dirt)) {
+								if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D && (block == BlocksAether.mossyHolystone || block == BlocksAether.holystone || block == BlocksAether.aetherGrass || block == BlocksAether.aetherDirt)) {
 									this.setBlockAndNotifyAdequately(world, k2, l2, i3, this.hollowBlock, 0);
 								}
 							}

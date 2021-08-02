@@ -13,11 +13,11 @@ import com.gildedgames.aether.player.PlayerAether;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
-public class GuiAetherInGame extends Gui {
+public class GUIAetherInGame extends Gui {
 
 	private Minecraft mc;
 
-	public GuiAetherInGame(Minecraft mc) {
+	public GUIAetherInGame(Minecraft mc) {
 		super();
 		this.mc = mc;
 	}

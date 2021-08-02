@@ -8,7 +8,6 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IProjectile;
-import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityArrow;
@@ -17,7 +16,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.S2BPacketChangeGameState;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EntityDamageSourceIndirect;
+import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
@@ -282,7 +281,7 @@ public abstract class EntityDartBase extends EntityArrow implements IProjectile,
 
             this.rotationPitch = this.prevRotationPitch + (this.rotationPitch - this.prevRotationPitch) * 0.2F;
             this.rotationYaw = this.prevRotationYaw + (this.rotationYaw - this.prevRotationYaw) * 0.2F;
-            float f3 = 0.99F;
+            float f3 = 1.0F;
             f1 = 0.05F;
 
             if (this.isInWater()) {
@@ -291,11 +290,7 @@ public abstract class EntityDartBase extends EntityArrow implements IProjectile,
                     this.worldObj.spawnParticle("bubble", this.posX - this.motionX * (double) f4, this.posY - this.motionY * (double) f4, this.posZ - this.motionZ * (double) f4, this.motionX, this.motionY, this.motionZ);
                 }
 
-                f3 = 0.8F;
-            }
-
-            if (this.isWet()) {
-                this.extinguish();
+                f3 = 1.0F;
             }
 
             this.motionX *= (double) f3;
@@ -310,8 +305,7 @@ public abstract class EntityDartBase extends EntityArrow implements IProjectile,
             this.func_145775_I();
         }
 
-        if (this.ticksInAir == 500)
-        {
+        if (this.ticksInAir == 500) {
             this.setDead();
         }
     }
@@ -327,10 +321,6 @@ public abstract class EntityDartBase extends EntityArrow implements IProjectile,
                 damagesource = EntityDartBase.causeDartDamage(this, this);
             } else {
                 damagesource = EntityDartBase.causeDartDamage(this, this.shootingEntity);
-            }
-
-            if (this.isBurning()) {
-                movingobjectposition.entityHit.setFire(5);
             }
 
             if (movingobjectposition.entityHit.attackEntityFrom(damagesource, (float) k)) {
@@ -358,10 +348,6 @@ public abstract class EntityDartBase extends EntityArrow implements IProjectile,
                 }
 
                 this.playSound("random.bowhit", 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
-
-                if (!(movingobjectposition.entityHit instanceof EntityEnderman)) {
-                    this.setDead();
-                }
             } else {
                 this.motionX *= -0.1D;
                 this.motionY *= -0.1D;
@@ -393,14 +379,10 @@ public abstract class EntityDartBase extends EntityArrow implements IProjectile,
             }
         }
 
-        if (movingobjectposition.entityHit != null && movingobjectposition.typeOfHit != null && this.shootingEntity != null)
-        {
-            if (movingobjectposition.entityHit != this.shootingEntity && movingobjectposition.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY && movingobjectposition.entityHit != this.shootingEntity.riddenByEntity)
-            {
+        if (movingobjectposition.entityHit != null && movingobjectposition.typeOfHit != null && this.shootingEntity != null) {
+            if (movingobjectposition.entityHit != this.shootingEntity && movingobjectposition.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY && movingobjectposition.entityHit != this.shootingEntity.riddenByEntity) {
                 this.setDead();
-            }
-            else
-            {
+            } else {
                 this.setGravityVelocity(0.03F);
             }
         }
@@ -417,40 +399,40 @@ public abstract class EntityDartBase extends EntityArrow implements IProjectile,
     }
 
     @Override
-    public void writeEntityToNBT(NBTTagCompound p_70014_1_) {
-        p_70014_1_.setShort("xTile", (short) this.tileX);
-        p_70014_1_.setShort("yTile", (short) this.tileY);
-        p_70014_1_.setShort("zTile", (short) this.tileZ);
-        p_70014_1_.setShort("life", (short) this.ticksInGround);
-        p_70014_1_.setByte("inTile", (byte) Block.getIdFromBlock(this.inTile));
-        p_70014_1_.setByte("inData", (byte) this.inData);
-        p_70014_1_.setByte("shake", (byte) this.dartShake);
-        p_70014_1_.setByte("inGround", (byte) (this.inGround ? 1 : 0));
-        p_70014_1_.setByte("wasInGround", (byte) (this.wasInGround ? 1 : 0));
-        p_70014_1_.setByte("pickup", (byte) this.canBePickedUp);
-        p_70014_1_.setDouble("damage", this.damage);
+    public void writeEntityToNBT(NBTTagCompound nbttagcompound) {
+        nbttagcompound.setShort("xTile", (short) this.tileX);
+        nbttagcompound.setShort("yTile", (short) this.tileY);
+        nbttagcompound.setShort("zTile", (short) this.tileZ);
+        nbttagcompound.setShort("life", (short) this.ticksInGround);
+        nbttagcompound.setByte("inTile", (byte) Block.getIdFromBlock(this.inTile));
+        nbttagcompound.setByte("inData", (byte) this.inData);
+        nbttagcompound.setByte("shake", (byte) this.dartShake);
+        nbttagcompound.setByte("inGround", (byte) (this.inGround ? 1 : 0));
+        nbttagcompound.setByte("wasInGround", (byte) (this.wasInGround ? 1 : 0));
+        nbttagcompound.setByte("pickup", (byte) this.canBePickedUp);
+        nbttagcompound.setDouble("damage", this.damage);
     }
 
     @Override
-    public void readEntityFromNBT(NBTTagCompound p_70037_1_) {
-        this.tileX = p_70037_1_.getShort("xTile");
-        this.tileY = p_70037_1_.getShort("yTile");
-        this.tileZ = p_70037_1_.getShort("zTile");
-        this.ticksInGround = p_70037_1_.getShort("life");
-        this.inTile = Block.getBlockById(p_70037_1_.getByte("inTile") & 255);
-        this.inData = p_70037_1_.getByte("inData") & 255;
-        this.dartShake = p_70037_1_.getByte("shake") & 255;
-        this.inGround = p_70037_1_.getByte("inGround") == 1;
-        this.wasInGround = p_70037_1_.getByte("wasInGround") == 1;
+    public void readEntityFromNBT(NBTTagCompound nbttagcompound) {
+        this.tileX = nbttagcompound.getShort("xTile");
+        this.tileY = nbttagcompound.getShort("yTile");
+        this.tileZ = nbttagcompound.getShort("zTile");
+        this.ticksInGround = nbttagcompound.getShort("life");
+        this.inTile = Block.getBlockById(nbttagcompound.getByte("inTile") & 255);
+        this.inData = nbttagcompound.getByte("inData") & 255;
+        this.dartShake = nbttagcompound.getByte("shake") & 255;
+        this.inGround = nbttagcompound.getByte("inGround") == 1;
+        this.wasInGround = nbttagcompound.getByte("wasInGround") == 1;
 
-        if (p_70037_1_.hasKey("damage", 99)) {
-            this.damage = p_70037_1_.getDouble("damage");
+        if (nbttagcompound.hasKey("damage", 99)) {
+            this.damage = nbttagcompound.getDouble("damage");
         }
 
-        if (p_70037_1_.hasKey("pickup", 99)) {
-            this.canBePickedUp = p_70037_1_.getByte("pickup");
-        } else if (p_70037_1_.hasKey("player", 99)) {
-            this.canBePickedUp = p_70037_1_.getBoolean("player") ? 1 : 0;
+        if (nbttagcompound.hasKey("pickup", 99)) {
+            this.canBePickedUp = nbttagcompound.getByte("pickup");
+        } else if (nbttagcompound.hasKey("player", 99)) {
+            this.canBePickedUp = nbttagcompound.getBoolean("player") ? 1 : 0;
         }
     }
 
@@ -508,19 +490,34 @@ public abstract class EntityDartBase extends EntityArrow implements IProjectile,
     }
 
     public static DamageSource causeDartDamage(EntityDartBase dart, Entity thrower) {
-        return (new EntityDamageSourceIndirect("aether_legacy.dart", dart, thrower)).setProjectile();
+        return (new EntityDamageSource("aether_legacy.dart", thrower == null ? dart : thrower)).setProjectile();
     }
 
     @Override
-    public void setIsCritical(boolean p_70243_1_)
-    {
+    public void setIsCritical(boolean p_70243_1_) {
 
     }
 
     @Override
-    public boolean getIsCritical()
-    {
+    public boolean getIsCritical() {
         return false;
+    }
+
+    @Override
+    public boolean isBurning() {
+    	return false;
+    }
+
+    @Override
+    public void setFire(int seconds) {
+    }
+
+    @Override
+    public void extinguish() {
+    }
+
+    @Override
+    public void setKnockbackStrength(int power) {
     }
 
 }

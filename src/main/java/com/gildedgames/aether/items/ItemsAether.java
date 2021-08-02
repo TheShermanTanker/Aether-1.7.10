@@ -152,10 +152,10 @@ public class ItemsAether {
 		zaniteLeggings = register("zanite_leggings", new ItemZaniteArmor(2, ArmorMaterial.IRON, "zanite", zaniteGemstone, 0x711ae8).setTextureName(Aether.find("armor/zanite_leggings")));
 		zaniteBoots = register("zanite_boots", new ItemZaniteArmor(3, ArmorMaterial.IRON, "zanite", zaniteGemstone, 0x711ae8).setTextureName(Aether.find("armor/zanite_boots")));
 
-		gravititeHelmet = register("gravitite_helmet", new ItemAetherArmor(0, ArmorMaterial.DIAMOND, "gravitite", Item.getItemFromBlock(BlocksAether.enchanted_gravitite), 0xe752db).setTextureName(Aether.find("armor/gravitite_helmet")));
-		gravititeChestplate = register("gravitite_chestplate", new ItemAetherArmor(1, ArmorMaterial.DIAMOND, "gravitite", Item.getItemFromBlock(BlocksAether.enchanted_gravitite), 0xe752db).setTextureName(Aether.find("armor/gravitite_chestplate")));
-		gravititeLeggings = register("gravitite_leggings", new ItemAetherArmor(2, ArmorMaterial.DIAMOND, "gravitite", Item.getItemFromBlock(BlocksAether.enchanted_gravitite), 0xe752db).setTextureName(Aether.find("armor/gravitite_leggings")));
-		gravititeBoots = register("gravitite_boots", new ItemAetherArmor(3, ArmorMaterial.DIAMOND, "gravitite", Item.getItemFromBlock(BlocksAether.enchanted_gravitite), 0xe752db).setTextureName(Aether.find("armor/gravitite_boots")));
+		gravititeHelmet = register("gravitite_helmet", new ItemAetherArmor(0, ArmorMaterial.DIAMOND, "gravitite", Item.getItemFromBlock(BlocksAether.enchantedGravitite), 0xe752db).setTextureName(Aether.find("armor/gravitite_helmet")));
+		gravititeChestplate = register("gravitite_chestplate", new ItemAetherArmor(1, ArmorMaterial.DIAMOND, "gravitite", Item.getItemFromBlock(BlocksAether.enchantedGravitite), 0xe752db).setTextureName(Aether.find("armor/gravitite_chestplate")));
+		gravititeLeggings = register("gravitite_leggings", new ItemAetherArmor(2, ArmorMaterial.DIAMOND, "gravitite", Item.getItemFromBlock(BlocksAether.enchantedGravitite), 0xe752db).setTextureName(Aether.find("armor/gravitite_leggings")));
+		gravititeBoots = register("gravitite_boots", new ItemAetherArmor(3, ArmorMaterial.DIAMOND, "gravitite", Item.getItemFromBlock(BlocksAether.enchantedGravitite), 0xe752db).setTextureName(Aether.find("armor/gravitite_boots")));
 
 		neptuneHelmet = register("neptune_helmet", new ItemAetherArmor(0, ArmorMaterial.DIAMOND, "neptune", null, 0x2654FF).setTextureName(Aether.find("armor/neptune_helmet")));
 		neptuneChestplate = register("neptune_chestplate", new ItemAetherArmor(1, ArmorMaterial.DIAMOND, "neptune", null, 0x2654FF).setTextureName(Aether.find("armor/neptune_chestplate")));

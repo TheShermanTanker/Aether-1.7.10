@@ -19,7 +19,7 @@ public class ItemGravititeSword extends ItemSword {
 
 	@Override
 	public boolean getIsRepairable(ItemStack repairingItem, ItemStack material) {
-		return material.getItem() == Item.getItemFromBlock(BlocksAether.enchanted_gravitite);
+		return material.getItem() == Item.getItemFromBlock(BlocksAether.enchantedGravitite);
 	}
 
 	@Override

@@ -3,16 +3,16 @@ package com.gildedgames.aether.client.gui.dialogue.server;
 import java.util.ArrayList;
 
 import com.gildedgames.aether.client.gui.dialogue.DialogueOption;
-import com.gildedgames.aether.client.gui.dialogue.GuiDialogue;
+import com.gildedgames.aether.client.gui.dialogue.GUIDialogue;
 import com.gildedgames.aether.network.AetherNetwork;
 import com.gildedgames.aether.network.packets.PacketDialogueClicked;
 import com.google.common.collect.Lists;
 
-public class GuiServerDialogue extends GuiDialogue {
+public class GUIServerDialogue extends GUIDialogue {
 
     private String dialogueName;
 
-    public GuiServerDialogue(String dialogueName, String dialogue, ArrayList<String> dialogueText) {
+    public GUIServerDialogue(String dialogueName, String dialogue, ArrayList<String> dialogueText) {
         super(dialogue);
 
         this.dialogueName = dialogueName;

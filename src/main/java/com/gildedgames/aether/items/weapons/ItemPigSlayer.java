@@ -37,10 +37,10 @@ public class ItemPigSlayer extends ItemSword {
 
 		String string = EntityList.getEntityString((Entity) entityliving);
 
-		if (string != null && (string.toLowerCase().contains("pig") || string.toLowerCase().contains("phyg") || string.toLowerCase().contains("taegore") || entityliving.getUniqueID().toString().equals("1d680bb6-2a9a-4f25-bf2f-a1af74361d69"))) {
+		if (string != null && (string.toLowerCase().contains("pig") || string.toLowerCase().contains("taegore") || entityliving.getUniqueID().toString().equals("1d680bb6-2a9a-4f25-bf2f-a1af74361d69"))) {
 			if (entityliving.getHealth() > 0) {
 				entityliving.setHealth(0);
-				entityliving.attackEntityFrom(DamageSource.causeMobDamage(entityliving1), 0); //Doesn't actually kill the entityliving target, rather updates it so Minecraft knows that it's already dead
+				entityliving.onDeath(DamageSource.causeMobDamage(entityliving1));
 			}
 		}
 

@@ -50,9 +50,9 @@ public class ComponentGoldenIslandStub extends AetherStructure {
 
 					if (Math.sqrt(k2 * k2 + i3 * i3 + k3 * k3) <= 8.0D) {
 						if (BlocksAether.isGood(this.getBlockStateWithOffset(i1 + x, k1 + y + 1, i2 + z)) && k1 > 1) {
-							this.setBlockWithOffset(i1 + x, k1 + y, i2 + z, BlocksAether.aether_grass, 3);
-							this.setBlockWithOffset(i1 + x, (k1 + y) - 1, i2 + z, BlocksAether.aether_dirt, 0);
-							this.setBlockWithOffset(i1 + x, (k1 + y) - (1 + this.random.nextInt(2)), i2 + z, BlocksAether.aether_dirt, 0);
+							this.setBlockWithOffset(i1 + x, k1 + y, i2 + z, BlocksAether.aetherGrass, 3);
+							this.setBlockWithOffset(i1 + x, (k1 + y) - 1, i2 + z, BlocksAether.aetherDirt, 0);
+							this.setBlockWithOffset(i1 + x, (k1 + y) - (1 + this.random.nextInt(2)), i2 + z, BlocksAether.aetherDirt, 0);
 
 							if (k1 >= 4) {
 								int l3 = this.random.nextInt(64);

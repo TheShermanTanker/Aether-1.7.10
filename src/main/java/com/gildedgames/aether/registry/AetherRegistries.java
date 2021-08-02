@@ -101,8 +101,8 @@ public class AetherRegistries {
 		AetherAPI.instance().register(new AetherEnchantment(new ItemStack(ItemsAether.skyrootBucket, 1, 2), new ItemStack(ItemsAether.skyrootBucket.setContainerItem(null), 1, 3), 1000));
 
 		AetherAPI.instance().register(new AetherEnchantment(BlocksAether.holystone, ItemsAether.healingStone, 750));
-		AetherAPI.instance().register(new AetherEnchantment(BlocksAether.gravitite_ore, BlocksAether.enchanted_gravitite, 1000));
-		AetherAPI.instance().register(new AetherEnchantment(BlocksAether.quicksoil, BlocksAether.quicksoil_glass, 250));
+		AetherAPI.instance().register(new AetherEnchantment(BlocksAether.gravititeOre, BlocksAether.enchantedGravitite, 1000));
+		AetherAPI.instance().register(new AetherEnchantment(BlocksAether.quicksoil, BlocksAether.quicksoilGlass, 250));
 
 		AetherAPI.instance().register(new AetherEnchantment(ItemsAether.blueberry, ItemsAether.enchantedBlueberry, 300));
 
@@ -177,8 +177,8 @@ public class AetherRegistries {
 
 	public static void initializeFreezables() {
 		AetherAPI.instance().register(new AetherFreezable(BlocksAether.aercloud, new ItemStack(BlocksAether.aercloud, 1, 1), 100));
-		AetherAPI.instance().register(new AetherFreezable(BlocksAether.skyroot_leaves, BlocksAether.crystal_leaves, 150));
-		AetherAPI.instance().register(new AetherFreezable(BlocksAether.golden_oak_leaves, BlocksAether.crystal_leaves, 150));
+		AetherAPI.instance().register(new AetherFreezable(BlocksAether.skyrootLeaves, BlocksAether.crystalLeaves, 150));
+		AetherAPI.instance().register(new AetherFreezable(BlocksAether.goldenOakLeaves, BlocksAether.crystalLeaves, 150));
 		AetherAPI.instance().register(new AetherFreezable(new ItemStack(ItemsAether.skyrootBucket, 1, 1), Blocks.ice, 500));
 		AetherAPI.instance().register(new AetherFreezable(ItemsAether.ascendingDawn, ItemsAether.welcomingSkies, 2500));
 		AetherAPI.instance().register(new AetherFreezable(Blocks.ice, Blocks.packed_ice, 750));
@@ -205,17 +205,17 @@ public class AetherRegistries {
 		initializeShapelessRecipes();
 
 		GameRegistry.addRecipe(new RecipeAccessoryDyes());
-		FurnaceRecipes.smelting().func_151394_a(new ItemStack(BlocksAether.skyroot_log, 1, 1), new ItemStack(Items.coal, 1, 1), 0.15F);
-		FurnaceRecipes.smelting().func_151394_a(new ItemStack(BlocksAether.golden_oak_log, 1, 1), new ItemStack(Items.coal, 1, 1), 0.15F);
+		FurnaceRecipes.smelting().func_151394_a(new ItemStack(BlocksAether.skyrootLog, 1, 1), new ItemStack(Items.coal, 1, 1), 0.15F);
+		FurnaceRecipes.smelting().func_151394_a(new ItemStack(BlocksAether.goldenOakLog, 1, 1), new ItemStack(Items.coal, 1, 1), 0.15F);
 
 		OreDictionary.registerOre("stickWood", ItemsAether.skyrootStick);
 	}
 
 	private static void initializeShapelessRecipes() {
 		registerShapeless("poison_dart_shooter", new ItemStack(ItemsAether.dartShooter, 1, 1), new ItemStack(ItemsAether.dartShooter, 1, 0), new ItemStack(ItemsAether.skyrootBucket, 1, 2));
-		registerShapeless("purple_dye", new ItemStack(Items.dye, 2, 5), BlocksAether.purple_flower);
-		registerShapeless("skyroot_planks", new ItemStack(BlocksAether.skyroot_planks, 4), new ItemStack(BlocksAether.skyroot_log, 1, 1));
-		registerShapeless("skyroot_planks", new ItemStack(BlocksAether.skyroot_planks, 4), new ItemStack(BlocksAether.golden_oak_log, 1, 1));
+		registerShapeless("purple_dye", new ItemStack(Items.dye, 2, 5), BlocksAether.purpleFlower);
+		registerShapeless("skyroot_planks", new ItemStack(BlocksAether.skyrootPlanks, 4), new ItemStack(BlocksAether.skyrootLog, 1, 1));
+		registerShapeless("skyroot_planks", new ItemStack(BlocksAether.skyrootPlanks, 4), new ItemStack(BlocksAether.goldenOakLog, 1, 1));
 		registerShapeless("book_of_lore", new ItemStack(ItemsAether.loreBook), new ItemStack(Items.book), new ItemStack(ItemsAether.ambrosiumShard));
 		registerShapeless("book_of_lore", new ItemStack(ItemsAether.loreBook), new ItemStack(Items.book), new ItemStack(Items.flint));
 		registerShapeless("book_of_lore", new ItemStack(ItemsAether.loreBook), new ItemStack(Items.book), new ItemStack(Items.glowstone_dust));
@@ -223,57 +223,57 @@ public class AetherRegistries {
 
 	private static void initializeRecipes() {
 		register("nature_staf", new ItemStack(ItemsAether.natureStaff), "Y", "X", 'Y', ItemsAether.zaniteGemstone, 'X', ItemsAether.skyrootStick);
-		register("skyroot_stick", new ItemStack(ItemsAether.skyrootStick, 4), "X", "X", 'X', BlocksAether.skyroot_planks);
-		register("trapdoor", new ItemStack(Blocks.trapdoor, 2), "XXX", "XXX", 'X', BlocksAether.skyroot_planks);
-		register("holystone_brick", new ItemStack(BlocksAether.holystone_brick, 4), "XX", "XX", 'X', BlocksAether.holystone);
-		register("zanite_block", new ItemStack(BlocksAether.zanite_block), "XXX", "XXX", "XXX", 'X', ItemsAether.zaniteGemstone);
-		register("zanite_gemstone", new ItemStack(ItemsAether.zaniteGemstone, 9), "X", 'X', BlocksAether.zanite_block);
-		register("golden_dart_shooter", new ItemStack(ItemsAether.dartShooter, 1), "X  ", " Y ", "  Y", 'X', ItemsAether.goldenAmber, 'Y', BlocksAether.skyroot_planks);
+		register("skyroot_stick", new ItemStack(ItemsAether.skyrootStick, 4), "X", "X", 'X', BlocksAether.skyrootPlanks);
+		register("trapdoor", new ItemStack(Blocks.trapdoor, 2), "XXX", "XXX", 'X', BlocksAether.skyrootPlanks);
+		register("holystone_brick", new ItemStack(BlocksAether.holystoneBrick, 4), "XX", "XX", 'X', BlocksAether.holystone);
+		register("zanite_block", new ItemStack(BlocksAether.zaniteBlock), "XXX", "XXX", "XXX", 'X', ItemsAether.zaniteGemstone);
+		register("zanite_gemstone", new ItemStack(ItemsAether.zaniteGemstone, 9), "X", 'X', BlocksAether.zaniteBlock);
+		register("golden_dart_shooter", new ItemStack(ItemsAether.dartShooter, 1), "X  ", " Y ", "  Y", 'X', ItemsAether.goldenAmber, 'Y', BlocksAether.skyrootPlanks);
 		register("golden_dart", new ItemStack(ItemsAether.dart, 1), "X", "Y", "Z", 'X', Items.feather, 'Y', ItemsAether.skyrootStick, 'Z', ItemsAether.goldenAmber);
 		register("poison_dart", new ItemStack(ItemsAether.dart, 8, 1), "XXX", "XYX", "XXX", 'X', new ItemStack(ItemsAether.dart, 1), 'Y', new ItemStack(ItemsAether.skyrootBucket, 1, 2));
-		register("incubator", new ItemStack(BlocksAether.incubator), "XXX", "XZX", "XXX", 'X', BlocksAether.holystone, 'Z', BlocksAether.ambrosium_torch);
-		register("freezer", new ItemStack(BlocksAether.freezer), "XXX", "XYX", "ZZZ", 'X', BlocksAether.holystone, 'Y', BlocksAether.icestone, 'Z', BlocksAether.skyroot_planks);
+		register("incubator", new ItemStack(BlocksAether.incubator), "XXX", "XZX", "XXX", 'X', BlocksAether.holystone, 'Z', BlocksAether.ambrosiumTorch);
+		register("freezer", new ItemStack(BlocksAether.freezer), "XXX", "XYX", "ZZZ", 'X', BlocksAether.holystone, 'Y', BlocksAether.icestone, 'Z', BlocksAether.skyrootPlanks);
 		register("enchanter", new ItemStack(BlocksAether.enchanter), "XXX", "XYX", "XXX", 'X', BlocksAether.holystone, 'Y', ItemsAether.zaniteGemstone);
 		register("furnace", new ItemStack(Blocks.furnace), "XXX", "X X", "XXX", 'X', BlocksAether.holystone);
 		register("ladder", new ItemStack(Blocks.ladder, 4), "X X", "XXX", "X X", 'X', ItemsAether.skyrootStick);
-		register("jukebox", new ItemStack(Blocks.jukebox), "XXX", "XYX", "XXX", 'X', BlocksAether.skyroot_planks, 'Y', BlocksAether.enchanted_gravitite);
-		register("oak_door", new ItemStack(Items.wooden_door, 3), "XX", "XX", "XX", 'X', BlocksAether.skyroot_planks);
-		register("sign", new ItemStack(Items.sign, 3), "XXX", "XXX", " Y ", 'X', BlocksAether.skyroot_planks, 'Y', ItemsAether.skyrootStick);
-		register("ambrosium_torch", new ItemStack(BlocksAether.ambrosium_torch, 2), "Z", "Y", 'Z', ItemsAether.ambrosiumShard, 'Y', ItemsAether.skyrootStick);
+		register("jukebox", new ItemStack(Blocks.jukebox), "XXX", "XYX", "XXX", 'X', BlocksAether.skyrootPlanks, 'Y', BlocksAether.enchantedGravitite);
+		register("oak_door", new ItemStack(Items.wooden_door, 3), "XX", "XX", "XX", 'X', BlocksAether.skyrootPlanks);
+		register("sign", new ItemStack(Items.sign, 3), "XXX", "XXX", " Y ", 'X', BlocksAether.skyrootPlanks, 'Y', ItemsAether.skyrootStick);
+		register("ambrosium_torch", new ItemStack(BlocksAether.ambrosiumTorch, 2), "Z", "Y", 'Z', ItemsAether.ambrosiumShard, 'Y', ItemsAether.skyrootStick);
 		register("lead", new ItemStack(Items.lead, 2), "YY ", "YX ", "  Y", 'Y', Items.string, 'X', ItemsAether.swetBall);
 
 		register("cloud_parachute", new ItemStack(ItemsAether.cloudParachute, 1), "XX", "XX", 'X', new ItemStack(BlocksAether.aercloud, 1));
 		register("golden_parachute", new ItemStack(ItemsAether.goldenParachute, 1), "XX", "XX", 'X', new ItemStack(BlocksAether.aercloud, 1, 2));
 		register("saddle", new ItemStack(Items.saddle, 1), "XXX", "XZX", 'X', Items.leather, 'Z', Items.string);
-		register("chest", new ItemStack(Blocks.chest, 1), "XXX", "X X", "XXX", 'X', BlocksAether.skyroot_planks);
-		register("skyroot_bucket", new ItemStack(ItemsAether.skyrootBucket, 1, 0), "Z Z", " Z ", 'Z', BlocksAether.skyroot_planks);
-		register("crafting_table", new ItemStack(Blocks.crafting_table, 1), "XX", "XX", 'X', BlocksAether.skyroot_planks);
+		register("chest", new ItemStack(Blocks.chest, 1), "XXX", "X X", "XXX", 'X', BlocksAether.skyrootPlanks);
+		register("skyroot_bucket", new ItemStack(ItemsAether.skyrootBucket, 1, 0), "Z Z", " Z ", 'Z', BlocksAether.skyrootPlanks);
+		register("crafting_table", new ItemStack(Blocks.crafting_table, 1), "XX", "XX", 'X', BlocksAether.skyrootPlanks);
 
-		register("gravitite_helmet", new ItemStack(ItemsAether.gravititeHelmet, 1), "XXX", "X X", 'X', BlocksAether.enchanted_gravitite);
-		register("gravitite_chestplate", new ItemStack(ItemsAether.gravititeChestplate, 1), "X X", "XXX", "XXX", 'X', BlocksAether.enchanted_gravitite);
-		register("gravitite_leggings", new ItemStack(ItemsAether.gravititeLeggings, 1), "XXX", "X X", "X X", 'X', BlocksAether.enchanted_gravitite);
-		register("gravitite_boots", new ItemStack(ItemsAether.gravititeBoots, 1), "X X", "X X", 'X', BlocksAether.enchanted_gravitite);
+		register("gravitite_helmet", new ItemStack(ItemsAether.gravititeHelmet, 1), "XXX", "X X", 'X', BlocksAether.enchantedGravitite);
+		register("gravitite_chestplate", new ItemStack(ItemsAether.gravititeChestplate, 1), "X X", "XXX", "XXX", 'X', BlocksAether.enchantedGravitite);
+		register("gravitite_leggings", new ItemStack(ItemsAether.gravititeLeggings, 1), "XXX", "X X", "X X", 'X', BlocksAether.enchantedGravitite);
+		register("gravitite_boots", new ItemStack(ItemsAether.gravititeBoots, 1), "X X", "X X", 'X', BlocksAether.enchantedGravitite);
 		register("zanite_helmet", new ItemStack(ItemsAether.zaniteHelmet, 1), "XXX", "X X", 'X', ItemsAether.zaniteGemstone);
 		register("zanite_chestplate", new ItemStack(ItemsAether.zaniteChestplate, 1), "X X", "XXX", "XXX", 'X', ItemsAether.zaniteGemstone);
 		register("zanite_leggings", new ItemStack(ItemsAether.zaniteLeggings, 1), "XXX", "X X", "X X", 'X', ItemsAether.zaniteGemstone);
 		register("zanite_boots", new ItemStack(ItemsAether.zaniteBoots, 1), "X X", "X X", 'X', ItemsAether.zaniteGemstone);
 
-		register("skyroot_pickaxe", new ItemStack(ItemsAether.skyrootPickaxe, 1), "ZZZ", " Y ", " Y ", 'Z', BlocksAether.skyroot_planks, 'Y', ItemsAether.skyrootStick);
+		register("skyroot_pickaxe", new ItemStack(ItemsAether.skyrootPickaxe, 1), "ZZZ", " Y ", " Y ", 'Z', BlocksAether.skyrootPlanks, 'Y', ItemsAether.skyrootStick);
 		register("holystone_pickaxe", new ItemStack(ItemsAether.holystonePickaxe, 1), "ZZZ", " Y ", " Y ", 'Z', BlocksAether.holystone, 'Y', ItemsAether.skyrootStick);
 		register("zanite_pickaxe", new ItemStack(ItemsAether.zanitePickaxe, 1), "ZZZ", " Y ", " Y ", 'Z', ItemsAether.zaniteGemstone, 'Y', ItemsAether.skyrootStick);
-		register("gravitite_pickaxe", new ItemStack(ItemsAether.gravititePickaxe, 1), "ZZZ", " Y ", " Y ", 'Z', BlocksAether.enchanted_gravitite, 'Y', ItemsAether.skyrootStick);
-		register("skyroot_axe", new ItemStack(ItemsAether.skyrootAxe, 1), "ZZ", "ZY", " Y", 'Z', BlocksAether.skyroot_planks, 'Y', ItemsAether.skyrootStick);
+		register("gravitite_pickaxe", new ItemStack(ItemsAether.gravititePickaxe, 1), "ZZZ", " Y ", " Y ", 'Z', BlocksAether.enchantedGravitite, 'Y', ItemsAether.skyrootStick);
+		register("skyroot_axe", new ItemStack(ItemsAether.skyrootAxe, 1), "ZZ", "ZY", " Y", 'Z', BlocksAether.skyrootPlanks, 'Y', ItemsAether.skyrootStick);
 		register("holystone_axe", new ItemStack(ItemsAether.holystoneAxe, 1), "ZZ", "ZY", " Y", 'Z', BlocksAether.holystone, 'Y', ItemsAether.skyrootStick);
 		register("zanite_axe", new ItemStack(ItemsAether.zaniteAxe, 1), "ZZ", "ZY", " Y", 'Z', ItemsAether.zaniteGemstone, 'Y', ItemsAether.skyrootStick);
-		register("gravitite_axe", new ItemStack(ItemsAether.gravititeAxe, 1), "ZZ", "ZY", " Y", 'Z', BlocksAether.enchanted_gravitite, 'Y', ItemsAether.skyrootStick);
-		register("skyroot_shovel", new ItemStack(ItemsAether.skyrootShovel, 1), "Z", "Y", "Y", 'Z', BlocksAether.skyroot_planks, 'Y', ItemsAether.skyrootStick);
+		register("gravitite_axe", new ItemStack(ItemsAether.gravititeAxe, 1), "ZZ", "ZY", " Y", 'Z', BlocksAether.enchantedGravitite, 'Y', ItemsAether.skyrootStick);
+		register("skyroot_shovel", new ItemStack(ItemsAether.skyrootShovel, 1), "Z", "Y", "Y", 'Z', BlocksAether.skyrootPlanks, 'Y', ItemsAether.skyrootStick);
 		register("holystone_shovel", new ItemStack(ItemsAether.holystoneShovel, 1), "Z", "Y", "Y", 'Z', BlocksAether.holystone, 'Y', ItemsAether.skyrootStick);
 		register("zanite_shovel", new ItemStack(ItemsAether.zaniteShovel, 1), "Z", "Y", "Y", 'Z', ItemsAether.zaniteGemstone, 'Y', ItemsAether.skyrootStick);
-		register("gravitite_shovel", new ItemStack(ItemsAether.gravititeShovel, 1), "Z", "Y", "Y", 'Z', BlocksAether.enchanted_gravitite, 'Y', ItemsAether.skyrootStick);
-		register("skyroot_sword", new ItemStack(ItemsAether.skyrootSword, 1), "Z", "Z", "Y", 'Z', BlocksAether.skyroot_planks, 'Y', ItemsAether.skyrootStick);
+		register("gravitite_shovel", new ItemStack(ItemsAether.gravititeShovel, 1), "Z", "Y", "Y", 'Z', BlocksAether.enchantedGravitite, 'Y', ItemsAether.skyrootStick);
+		register("skyroot_sword", new ItemStack(ItemsAether.skyrootSword, 1), "Z", "Z", "Y", 'Z', BlocksAether.skyrootPlanks, 'Y', ItemsAether.skyrootStick);
 		register("holystone_sword", new ItemStack(ItemsAether.holystoneSword, 1), "Z", "Z", "Y", 'Z', BlocksAether.holystone, 'Y', ItemsAether.skyrootStick);
 		register("zanite_sword", new ItemStack(ItemsAether.zaniteSword, 1), "Z", "Z", "Y", 'Z', ItemsAether.zaniteGemstone, 'Y', ItemsAether.skyrootStick);
-		register("gravitite_sword", new ItemStack(ItemsAether.gravititeSword, 1), "Z", "Z", "Y", 'Z', BlocksAether.enchanted_gravitite, 'Y', ItemsAether.skyrootStick);
+		register("gravitite_sword", new ItemStack(ItemsAether.gravititeSword, 1), "Z", "Z", "Y", 'Z', BlocksAether.enchantedGravitite, 'Y', ItemsAether.skyrootStick);
 
 		register("white_cape", new ItemStack(ItemsAether.whiteCape), "ZZ", "ZZ", "ZZ", 'Z', new ItemStack(Blocks.wool, 1, 0));
 
@@ -285,37 +285,37 @@ public class AetherRegistries {
 		register("golden_gloves", new ItemStack(ItemsAether.golden_gloves), "C C", 'C', Items.gold_ingot);
 		register("diamond_gloves", new ItemStack(ItemsAether.diamond_gloves), "C C", 'C', Items.diamond);
 		register("zanite_gloves", new ItemStack(ItemsAether.zanite_gloves), "C C", 'C', ItemsAether.zaniteGemstone);
-		register("gravitite_gloves", new ItemStack(ItemsAether.gravitite_gloves), "C C", 'C', BlocksAether.enchanted_gravitite);
+		register("gravitite_gloves", new ItemStack(ItemsAether.gravitite_gloves), "C C", 'C', BlocksAether.enchantedGravitite);
 
-		register("skyroot_fence", new ItemStack(BlocksAether.skyroot_fence, 3), "ZXZ", "ZXZ", 'Z', new ItemStack(BlocksAether.skyroot_planks), 'X', new ItemStack(ItemsAether.skyrootStick));
-		register("skyroot_fence_gate", new ItemStack(BlocksAether.skyroot_fence_gate), "ZXZ", "ZXZ", 'X', new ItemStack(BlocksAether.skyroot_planks), 'Z', new ItemStack(ItemsAether.skyrootStick));
+		register("skyroot_fence", new ItemStack(BlocksAether.skyrootFence, 3), "ZXZ", "ZXZ", 'Z', new ItemStack(BlocksAether.skyrootPlanks), 'X', new ItemStack(ItemsAether.skyrootStick));
+		register("skyroot_fence_gate", new ItemStack(BlocksAether.skyrootFenceGate), "ZXZ", "ZXZ", 'X', new ItemStack(BlocksAether.skyrootPlanks), 'Z', new ItemStack(ItemsAether.skyrootStick));
 
-		register("carved_stone_slab", new ItemStack(BlocksAether.carved_slab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.carved_stone));
-		register("angelic_stone_slab", new ItemStack(BlocksAether.angelic_slab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.angelic_stone));
-		register("hellfire_stone_slab", new ItemStack(BlocksAether.hellfire_slab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.hellfire_stone));
-		register("holystone_slab", new ItemStack(BlocksAether.holystone_slab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.holystone, 1, 1));
-		register("mossy_holystone_slab", new ItemStack(BlocksAether.mossy_holystone_slab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.mossy_holystone, 1, 1));
-		register("holystone_brick_slab", new ItemStack(BlocksAether.holystone_brick_slab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.holystone_brick, 1));
-		register("skyroot_slab", new ItemStack(BlocksAether.skyroot_slab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.skyroot_planks));
+		register("carved_stone_slab", new ItemStack(BlocksAether.carvedSlab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.carvedStone));
+		register("angelic_stone_slab", new ItemStack(BlocksAether.angelicSlab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.angelicStone));
+		register("hellfire_stone_slab", new ItemStack(BlocksAether.hellfireSlab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.hellfireStone));
+		register("holystone_slab", new ItemStack(BlocksAether.holystoneSlab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.holystone, 1, 1));
+		register("mossy_holystone_slab", new ItemStack(BlocksAether.mossyHolystoneSlab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.mossyHolystone, 1, 1));
+		register("holystone_brick_slab", new ItemStack(BlocksAether.holystoneBrickSlab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.holystoneBrick, 1));
+		register("skyroot_slab", new ItemStack(BlocksAether.skyrootSlab, 6), "ZZZ", 'Z', new ItemStack(BlocksAether.skyrootPlanks));
 
-		register("carved_stone_wall", new ItemStack(BlocksAether.carved_wall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.carved_stone));
-		register("angelic_stone_wall", new ItemStack(BlocksAether.angelic_wall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.angelic_stone));
-		register("hellfire_stone_wall", new ItemStack(BlocksAether.hellfire_wall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.hellfire_stone));
-		register("holystone_wall", new ItemStack(BlocksAether.holystone_wall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.holystone, 1, 1));
-		register("mossy_holystone_wall", new ItemStack(BlocksAether.mossy_holystone_wall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.mossy_holystone, 1, 1));
-		register("holystone_brick_wall", new ItemStack(BlocksAether.holystone_brick_wall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.holystone_brick, 1));
+		register("carved_stone_wall", new ItemStack(BlocksAether.carvedWall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.carvedStone));
+		register("angelic_stone_wall", new ItemStack(BlocksAether.angelicWall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.angelicStone));
+		register("hellfire_stone_wall", new ItemStack(BlocksAether.hellfireWall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.hellfireStone));
+		register("holystone_wall", new ItemStack(BlocksAether.holystoneWall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.holystone, 1, 1));
+		register("mossy_holystone_wall", new ItemStack(BlocksAether.mossyHolystoneWall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.mossyHolystone, 1, 1));
+		register("holystone_brick_wall", new ItemStack(BlocksAether.holystoneBrickWall, 6), "ZZZ", "ZZZ", 'Z', new ItemStack(BlocksAether.holystoneBrick, 1));
 
-		register("carved_stone_stairs", new ItemStack(BlocksAether.carved_stairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.carved_stone));
-		register("angelic_stone_stairs", new ItemStack(BlocksAether.angelic_stairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.angelic_stone));
-		register("hellfire_stone_stairs", new ItemStack(BlocksAether.hellfire_stairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.hellfire_stone));
-		register("holystone_stairs", new ItemStack(BlocksAether.holystone_stairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.holystone, 1, 1));
-		register("mossy_holystone_stairs", new ItemStack(BlocksAether.mossy_holystone_stairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.mossy_holystone, 1, 1));
-		register("holystone_brick_stairs", new ItemStack(BlocksAether.holystone_brick_stairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.holystone_brick, 1));
-		register("skyroot_stairs", new ItemStack(BlocksAether.skyroot_stairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.skyroot_planks));
+		register("carved_stone_stairs", new ItemStack(BlocksAether.carvedStairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.carvedStone));
+		register("angelic_stone_stairs", new ItemStack(BlocksAether.angelicStairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.angelicStone));
+		register("hellfire_stone_stairs", new ItemStack(BlocksAether.hellfireStairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.hellfireStone));
+		register("holystone_stairs", new ItemStack(BlocksAether.holystoneStairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.holystone, 1, 1));
+		register("mossy_holystone_stairs", new ItemStack(BlocksAether.mossyHolystoneStairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.mossyHolystone, 1, 1));
+		register("holystone_brick_stairs", new ItemStack(BlocksAether.holystoneBrickStairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.holystoneBrick, 1));
+		register("skyroot_stairs", new ItemStack(BlocksAether.skyrootStairs, 4), "Z  ", "ZZ ", "ZZZ", 'Z', new ItemStack(BlocksAether.skyrootPlanks));
 
-		register("skyroot_bookshelf", new ItemStack(BlocksAether.skyroot_bookshelf, 1),  "ZZZ", "XXX", "ZZZ", 'Z', new ItemStack(BlocksAether.skyroot_planks), 'X', new ItemStack(Items.book));
+		register("skyroot_bookshelf", new ItemStack(BlocksAether.skyrootBookshelf, 1),  "ZZZ", "XXX", "ZZZ", 'Z', new ItemStack(BlocksAether.skyrootPlanks), 'X', new ItemStack(Items.book));
 
-		register("skyroot_bed_item", new ItemStack(ItemsAether.skyrootBedItem, 1),  "XXX", "ZZZ", 'Z', new ItemStack(BlocksAether.skyroot_planks), 'X', Blocks.wool);
+		register("skyroot_bed_item", new ItemStack(ItemsAether.skyrootBedItem, 1),  "XXX", "ZZZ", 'Z', new ItemStack(BlocksAether.skyrootPlanks), 'X', Blocks.wool);
 	}
 
 	private static void register(String name, ItemStack stack, Object... recipe) {

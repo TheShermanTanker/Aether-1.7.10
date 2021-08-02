@@ -14,6 +14,6 @@ public class ItemSkyrootTool extends ItemAetherTool {
 
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-		return repair.getItem() == Item.getItemFromBlock(BlocksAether.skyroot_planks);
+		return repair.getItem() == Item.getItemFromBlock(BlocksAether.skyrootPlanks);
 	}
 }

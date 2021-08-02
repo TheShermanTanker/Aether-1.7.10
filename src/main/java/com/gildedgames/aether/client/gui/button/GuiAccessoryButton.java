@@ -8,17 +8,17 @@ import org.lwjgl.opengl.GL11;
 
 import com.gildedgames.aether.Aether;
 
-public class GuiAccessoryButton extends GuiButton {
+public class GUIAccessoryButton extends GuiButton {
 
 	protected static final ResourceLocation BUTTON_TEXTURE = Aether.locate("textures/gui/inventory/button/cloud.png");
 
 	protected static final ResourceLocation BUTTON_HOVERED_TEXTURE = Aether.locate("textures/gui/inventory/button/cloud_hover.png");
 
-	public GuiAccessoryButton(int x, int y) {
+	public GUIAccessoryButton(int x, int y) {
 		super(18067, x, y, 12, 12, "");
 	}
 
-	public GuiAccessoryButton setPosition(int x, int y) {
+	public GUIAccessoryButton setPosition(int x, int y) {
 		this.xPosition = x;
 		this.yPosition = y;
 

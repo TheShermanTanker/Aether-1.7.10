@@ -10,11 +10,11 @@ import org.lwjgl.opengl.GL11;
 
 import com.gildedgames.aether.Aether;
 
-public class GuiLoreButton extends GuiButton {
+public class GUILoreButton extends GuiButton {
 
 	protected static final ResourceLocation BUTTON_TEXTURES = Aether.locate("textures/gui/lore_widgets.png");
 
-	public GuiLoreButton(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText) {
+	public GUILoreButton(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText) {
 		super(buttonId, x, y, widthIn, heightIn, buttonText);
 	}
 

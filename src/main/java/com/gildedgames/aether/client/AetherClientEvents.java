@@ -35,12 +35,12 @@ import org.lwjgl.input.Mouse;
 
 import com.gildedgames.aether.AetherConfig;
 import com.gildedgames.aether.client.gui.AetherLoadingScreen;
-import com.gildedgames.aether.client.gui.GuiCustomizationScreen;
-import com.gildedgames.aether.client.gui.GuiEnterAether;
+import com.gildedgames.aether.client.gui.GUICustomizationScreen;
+import com.gildedgames.aether.client.gui.GUIEnterAether;
 import com.gildedgames.aether.client.gui.button.*;
-import com.gildedgames.aether.client.gui.inventory.GuiAccessories;
+import com.gildedgames.aether.client.gui.inventory.GUIAccessories;
 import com.gildedgames.aether.client.gui.menu.AetherMainMenu;
-import com.gildedgames.aether.client.gui.menu.GuiMenuToggleButton;
+import com.gildedgames.aether.client.gui.menu.GUIMenuToggleButton;
 import com.gildedgames.aether.client.renders.entity.PlayerAetherRenderer;
 import com.gildedgames.aether.entities.EntitiesAether;
 import com.gildedgames.aether.items.ItemAetherSpawnEgg;
@@ -167,8 +167,8 @@ public class AetherClientEvents {
 
 		if (mc.thePlayer != null && event.gui instanceof GuiDownloadTerrain)
 		{
-			GuiEnterAether enterAether = new GuiEnterAether(true);
-			GuiEnterAether exitAether = new GuiEnterAether(false);
+			GUIEnterAether enterAether = new GUIEnterAether(true);
+			GUIEnterAether exitAether = new GUIEnterAether(false);
 
 			if (mc.thePlayer.dimension == AetherConfig.getAetherDimensionID())
 			{
@@ -269,9 +269,9 @@ public class AetherClientEvents {
 		}
 	}
 
-	private static final GuiAccessoryButton ACCESSORY_BUTTON = new GuiAccessoryButton(0, 0);
+	private static final GUIAccessoryButton ACCESSORY_BUTTON = new GUIAccessoryButton(0, 0);
 
-	private static final GuiMenuToggleButton MAIN_MENU_BUTTON = new GuiMenuToggleButton(0, 0);
+	private static final GUIMenuToggleButton MAIN_MENU_BUTTON = new GUIMenuToggleButton(0, 0);
 
 	private static int previousSelectedTabIndex = -1;
 
@@ -298,7 +298,7 @@ public class AetherClientEvents {
 				event.buttonList.add(ACCESSORY_BUTTON.setPosition(guiLeft + 26, guiTop + 65));
 			}
 
-			if (clazz == GuiAccessories.class)
+			if (clazz == GUIAccessories.class)
 			{
 				if (!shouldRemoveButton)
 				{
@@ -327,7 +327,7 @@ public class AetherClientEvents {
 			{
 				if (AetherRankings.isRankedPlayer(Minecraft.getMinecraft().thePlayer.getUniqueID()))
 				{
-					event.buttonList.add(new GuiCustomizationScreenButton(545, event.gui.width / 2 - 155, event.gui.height / 6 + 48 - 6, 150, 20, I18n.format("gui.options.perk_customization")));
+					event.buttonList.add(new GUICustomizationScreenButton(545, event.gui.width / 2 - 155, event.gui.height / 6 + 48 - 6, 150, 20, I18n.format("gui.options.perk_customization")));
 				}
 			}
 		}
@@ -337,7 +337,7 @@ public class AetherClientEvents {
 			if (Minecraft.getMinecraft().thePlayer != null)
 			{
 				int i = 13;
-				event.buttonList.add(new GuiCapeButton(event.gui.width / 2 - 155 + i % 2 * 160, event.gui.height / 6 + 24 * (i >> 1)));
+				event.buttonList.add(new GUICapeButton(event.gui.width / 2 - 155 + i % 2 * 160, event.gui.height / 6 + 24 * (i >> 1)));
 			}
 		}
 	}
@@ -381,12 +381,12 @@ public class AetherClientEvents {
 			AetherNetwork.sendToServer(new PacketOpenContainer(AetherGUIHandler.ACCESSORIES));
 		}
 
-		if (event.button.getClass() == GuiCustomizationScreenButton.class)
+		if (event.button.getClass() == GUICustomizationScreenButton.class)
 		{
-			Minecraft.getMinecraft().displayGuiScreen(new GuiCustomizationScreen(event.gui));
+			Minecraft.getMinecraft().displayGuiScreen(new GUICustomizationScreen(event.gui));
 		}
 
-		if (event.button.getClass() == GuiCapeButton.class)
+		if (event.button.getClass() == GUICapeButton.class)
 		{
 			PlayerAether player = PlayerAether.get(Minecraft.getMinecraft().thePlayer);
 

@@ -5,7 +5,7 @@ import io.netty.buffer.ByteBuf;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.gildedgames.aether.client.gui.dialogue.server.GuiServerDialogue;
+import com.gildedgames.aether.client.gui.dialogue.server.GUIServerDialogue;
 
 import net.minecraft.entity.player.EntityPlayer;
 import cpw.mods.fml.client.FMLClientHandler;
@@ -66,7 +66,7 @@ public class PacketDisplayDialogue extends AetherPacket<PacketDisplayDialogue> {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void handleClient(PacketDisplayDialogue message, EntityPlayer player) {
-		FMLClientHandler.instance().getClient().displayGuiScreen(new GuiServerDialogue(message.dialogueName, message.dialogue, message.dialogueText));
+		FMLClientHandler.instance().getClient().displayGuiScreen(new GUIServerDialogue(message.dialogueName, message.dialogue, message.dialogueText));
 	}
 
 	@Override

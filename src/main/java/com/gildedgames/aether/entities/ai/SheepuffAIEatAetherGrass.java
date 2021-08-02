@@ -35,7 +35,7 @@ public class SheepuffAIEatAetherGrass extends EntityAIBase {
 			int j = MathHelper.floor_double(this.sheepuff.posY);
 			int k = MathHelper.floor_double(this.sheepuff.posZ);
 
-			return this.entityWorld.getBlock(i, j - 1, k) == BlocksAether.aether_grass;
+			return this.entityWorld.getBlock(i, j - 1, k) == BlocksAether.aetherGrass;
 		}
 	}
 
@@ -68,12 +68,12 @@ public class SheepuffAIEatAetherGrass extends EntityAIBase {
 			int j = MathHelper.floor_double(this.sheepuff.posY);
 			int k = MathHelper.floor_double(this.sheepuff.posZ);
 
-			if (this.entityWorld.getBlock(i, j - 1, k) == BlocksAether.aether_grass)
+			if (this.entityWorld.getBlock(i, j - 1, k) == BlocksAether.aetherGrass)
 			{
 				if (this.entityWorld.getGameRules().getGameRuleBooleanValue("mobGriefing"))
 				{
-					this.entityWorld.playAuxSFX(2001, i, j - 1, k, Block.getIdFromBlock(BlocksAether.aether_grass));
-					this.entityWorld.setBlock(i, j - 1, k, BlocksAether.aether_dirt);
+					this.entityWorld.playAuxSFX(2001, i, j - 1, k, Block.getIdFromBlock(BlocksAether.aetherGrass));
+					this.entityWorld.setBlock(i, j - 1, k, BlocksAether.aetherDirt);
 				}
 
 				this.sheepuff.eatGrassBonus();

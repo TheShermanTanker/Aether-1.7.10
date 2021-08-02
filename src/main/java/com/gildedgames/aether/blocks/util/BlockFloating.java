@@ -27,7 +27,7 @@ public class BlockFloating extends Block {
 
 	@Override
 	public boolean isBeaconBase(IBlockAccess worldObj, int x, int y, int z, int beaconX, int beaconY, int beaconZ) {
-		return this == BlocksAether.enchanted_gravitite;
+		return this == BlocksAether.enchantedGravitite;
 	}
 
 	@Override

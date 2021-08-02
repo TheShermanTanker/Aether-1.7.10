@@ -13,11 +13,11 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import com.gildedgames.aether.Aether;
-import com.gildedgames.aether.client.gui.button.GuiLoreButton;
+import com.gildedgames.aether.client.gui.button.GUILoreButton;
 import com.gildedgames.aether.inventory.ContainerLore;
 import com.gildedgames.aether.registry.AetherLore;
 
-public class GuiLore extends GuiContainer {
+public class GUILore extends GuiContainer {
 
 	private static final ResourceLocation TEXTURE_LORE = Aether.locate("textures/gui/lore.png");
 
@@ -31,7 +31,7 @@ public class GuiLore extends GuiContainer {
 
 	private int pageNumber;
 
-	public GuiLore(InventoryPlayer inventoryplayer) {
+	public GUILore(InventoryPlayer inventoryplayer) {
 		super(new ContainerLore(inventoryplayer));
 
 		this.xSize = 256;
@@ -42,8 +42,8 @@ public class GuiLore extends GuiContainer {
 	public void initGui() {
 		super.initGui();
 
-		this.previousPage = new GuiLoreButton(19, this.width / 2 - 110, this.height / 2 + 72, 20, 20, "<");
-		this.nextPage = new GuiLoreButton(20, this.width / 2 + 90, this.height / 2 + 72, 20, 20, ">");
+		this.previousPage = new GUILoreButton(19, this.width / 2 - 110, this.height / 2 + 72, 20, 20, "<");
+		this.nextPage = new GUILoreButton(20, this.width / 2 + 90, this.height / 2 + 72, 20, 20, ">");
 
 		this.buttonList.add(this.previousPage);
 		this.buttonList.add(this.nextPage);

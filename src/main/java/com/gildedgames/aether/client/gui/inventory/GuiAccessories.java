@@ -13,19 +13,19 @@ import org.lwjgl.opengl.GL11;
 
 import com.gildedgames.aether.Aether;
 import com.gildedgames.aether.client.AetherKeybinds;
-import com.gildedgames.aether.client.gui.button.GuiAccessoryButton;
+import com.gildedgames.aether.client.gui.button.GUIAccessoryButton;
 import com.gildedgames.aether.inventory.ContainerAccessories;
 import com.gildedgames.aether.network.AetherNetwork;
 import com.gildedgames.aether.network.packets.PacketOpenContainer;
 import com.gildedgames.aether.player.PlayerAether;
 
-public class GuiAccessories extends GuiContainer {
+public class GUIAccessories extends GuiContainer {
 
 	private static final ResourceLocation ACCESSORIES = Aether.locate("textures/gui/inventory/accessories.png");
 
 	private PlayerAether playerAether;
 
-	public GuiAccessories(PlayerAether player) {
+	public GUIAccessories(PlayerAether player) {
 		super(new ContainerAccessories(player.getAccessoryInventory(), player.getEntity()));
 
 		this.playerAether = player;
@@ -68,7 +68,7 @@ public class GuiAccessories extends GuiContainer {
 	@Override
 	protected void actionPerformed(GuiButton button) {
 		if (button.id == 24) {
-			this.mc.displayGuiScreen(new GuiAetherPerks());
+			this.mc.displayGuiScreen(new GUIAetherPerks());
 		}
 
 		if (button.id == 18067) {

@@ -13,7 +13,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiAetherButton extends GuiButton {
+public class GUIAetherButton extends GuiButton {
 
 	protected static final ResourceLocation buttonTextures = Aether.locate("textures/gui/buttons.png");
 
@@ -29,7 +29,7 @@ public class GuiAetherButton extends GuiButton {
 
 	public boolean retracting = false;
 
-	public GuiAetherButton(int i, int j, int k, String s) {
+	public GUIAetherButton(int i, int j, int k, String s) {
 		super(i, j, k, s);
 	}
 

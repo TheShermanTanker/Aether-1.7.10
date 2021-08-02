@@ -173,7 +173,7 @@ AetherEventHandler {
 			}
 
 			if (isWater) {
-				if (((BlockAetherPortal) BlocksAether.aether_portal).trySpawnPortal(worldObj, i, j, k)) {
+				if (((BlockAetherPortal) BlocksAether.aetherPortal).trySpawnPortal(worldObj, i, j, k)) {
 					if (!player.capabilities.isCreativeMode) {
 						if (stack.getItem() == ItemsAether.skyrootBucket && stack.getItemDamage() == 1) {
 							event.result = new ItemStack(ItemsAether.skyrootBucket);

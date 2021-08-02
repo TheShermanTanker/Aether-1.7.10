@@ -12,13 +12,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiIncubator extends GuiContainer {
+public class GUIIncubator extends GuiContainer {
 
 	private TileEntityIncubator incubatorInventory;
 
 	private static final ResourceLocation TEXTURE_INCUBATOR = Aether.locate("textures/gui/incubator.png");
 
-	public GuiIncubator(EntityPlayer player, InventoryPlayer inventoryplayer, TileEntityIncubator tileentityIncubator) {
+	public GUIIncubator(EntityPlayer player, InventoryPlayer inventoryplayer, TileEntityIncubator tileentityIncubator) {
 		super(new ContainerIncubator(player, inventoryplayer, tileentityIncubator));
 
 		this.incubatorInventory = (TileEntityIncubator) tileentityIncubator;

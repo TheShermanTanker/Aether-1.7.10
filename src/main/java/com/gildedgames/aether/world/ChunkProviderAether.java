@@ -118,8 +118,8 @@ public class ChunkProviderAether implements IChunkProvider {
 				int j1 = -1;
 				int i1 = (int) (3.0D + this.rand.nextDouble() * 0.25D);
 
-				Block top = BlocksAether.aether_grass;
-				Block filler = BlocksAether.aether_dirt;
+				Block top = BlocksAether.aetherGrass;
+				Block filler = BlocksAether.aetherDirt;
 
 				for (int k1 = 127; k1 >= 0; k1--) {
 					int l1 = (l * 16 + k) * 128 + k1;

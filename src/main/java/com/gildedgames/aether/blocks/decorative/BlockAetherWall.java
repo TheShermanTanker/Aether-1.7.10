@@ -45,6 +45,6 @@ public class BlockAetherWall extends BlockWall {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getRenderBlockPass() {
-		return this == BlocksAether.aerogel_wall ? 1 : 0;
+		return this == BlocksAether.aerogelWall ? 1 : 0;
 	}
 }

@@ -21,9 +21,9 @@ import net.minecraft.world.gen.structure.StructureBoundingBox;
 
 public class ComponentSilverDungeon extends AetherStructure {
 
-	private static final Block LOCKED_ANGELIC_STONE = BlocksAether.locked_angelic_stone;
+	private static final Block LOCKED_ANGELIC_STONE = BlocksAether.lockedAngelicStone;
 
-	private static final Block LOCKED_LIGHT_ANGELIC_STONE = BlocksAether.locked_light_angelic_stone;
+	private static final Block LOCKED_LIGHT_ANGELIC_STONE = BlocksAether.lockedLightAngelicStone;
 
 	private int[][][] rooms = new int[3][3][3];
 
@@ -65,7 +65,7 @@ public class ComponentSilverDungeon extends AetherStructure {
 
 		this.replaceSolid = true;
 
-		this.setBlocks(BlocksAether.holystone, BlocksAether.mossy_holystone, 30);
+		this.setBlocks(BlocksAether.holystone, BlocksAether.mossyHolystone, 30);
 
 		this.addSolidBox(0, -5, 0, 55, 5, 30);
 
@@ -92,7 +92,7 @@ public class ComponentSilverDungeon extends AetherStructure {
 		this.addPlaneZ(5, 0, 11, 20, 15);
 		this.addPlaneZ(5, 0, 18, 20, 15);
 
-		this.setBlocks(LOCKED_ANGELIC_STONE, BlocksAether.angelic_trap, 30);
+		this.setBlocks(LOCKED_ANGELIC_STONE, BlocksAether.angelicTrap, 30);
 		this.addPlaneY(5, 4, 5, 20, 20);
 		this.addPlaneY(5, 9, 5, 20, 20);
 
@@ -237,7 +237,7 @@ public class ComponentSilverDungeon extends AetherStructure {
 						int roomType = this.random.nextInt(3);
 
 						if (type >= 3) {
-							this.setBlockWithOffset(7 + p * 7, -1 + q * 5, 7 + r * 7, BlocksAether.angelic_trap, 0);
+							this.setBlockWithOffset(7 + p * 7, -1 + q * 5, 7 + r * 7, BlocksAether.angelicTrap, 0);
 
 							switch (roomType) {
 								case 1: {
@@ -301,7 +301,7 @@ public class ComponentSilverDungeon extends AetherStructure {
 
 		for (x = 0; x < 2; x++) {
 			for (z = 0; z < 2; z++) {
-				this.setBlockWithOffset(44 + x * 5, 2, 11 + z * 7, BlocksAether.ambrosium_torch, 0);
+				this.setBlockWithOffset(44 + x * 5, 2, 11 + z * 7, BlocksAether.ambrosiumTorch, 0);
 			}
 		}
 
@@ -329,7 +329,7 @@ public class ComponentSilverDungeon extends AetherStructure {
 
 		for (x = 36; x < 40; x += 3) {
 			for (z = 8; z < 22; z += 13) {
-				this.setBlockWithOffset(x, 2, z, BlocksAether.ambrosium_torch, 0);
+				this.setBlockWithOffset(x, 2, z, BlocksAether.ambrosiumTorch, 0);
 			}
 		}
 
@@ -354,7 +354,7 @@ public class ComponentSilverDungeon extends AetherStructure {
 		x = 42 + this.random.nextInt(2);
 		z = 14 + this.random.nextInt(2);
 
-		this.setBlockWithOffset(x, -1, z, BlocksAether.treasureChest, 0);
+		this.setBlockWithOffset(x, -1, z, BlocksAether.treasureChestSilver, 0);
 
 		return true;
 	}
@@ -363,12 +363,12 @@ public class ComponentSilverDungeon extends AetherStructure {
 		this.setBlocks(LOCKED_ANGELIC_STONE, LOCKED_LIGHT_ANGELIC_STONE, 2);
 		this.addPlaneY(x, y, z, 3, 3);
 
-		this.setBlockWithOffset(x + 1, y, z + 1, BlocksAether.aether_dirt, 0);
-		this.setBlockWithOffset(x + 1, y + 1, z + 1, BlocksAether.golden_oak_sapling, 0);
+		this.setBlockWithOffset(x + 1, y, z + 1, BlocksAether.aetherDirt, 0);
+		this.setBlockWithOffset(x + 1, y + 1, z + 1, BlocksAether.goldenOakSapling, 0);
 
 		for (int lineX = x; lineX < x + 3; lineX += 2) {
 			for (int lineZ = z; lineZ < z + 3; lineZ += 2) {
-				this.setBlockWithOffset(lineX, y + 1, lineZ, BlocksAether.ambrosium_torch, 0);
+				this.setBlockWithOffset(lineX, y + 1, lineZ, BlocksAether.ambrosiumTorch, 0);
 			}
 		}
 	}
@@ -397,7 +397,7 @@ public class ComponentSilverDungeon extends AetherStructure {
 		this.addPlaneY(x, y + yRange, z, 3, 3);
 		this.setBlocks(BlocksAether.pillar, BlocksAether.pillar, 1);
 		this.addLineY(x + 1, y, z + 1, yRange - 1);
-		this.setBlockWithOffset(x + 1, y + (yRange - 1), z + 1, BlocksAether.pillar_top, 0);
+		this.setBlockWithOffset(x + 1, y + (yRange - 1), z + 1, BlocksAether.pillarTop, 0);
 	}
 
 	public void generateStaircase(int x, int y, int z, int height) {
@@ -512,7 +512,7 @@ public class ComponentSilverDungeon extends AetherStructure {
 			}
 		}
 
-		return new ItemStack(BlocksAether.ambrosium_torch, random.nextInt(4) + 1);
+		return new ItemStack(BlocksAether.ambrosiumTorch, random.nextInt(4) + 1);
 	}
 
 	public static ItemStack getSilverLoot(Random random) {
@@ -545,27 +545,20 @@ public class ComponentSilverDungeon extends AetherStructure {
 					return new ItemStack(ItemsAether.neptuneLeggings);
 				if (random.nextBoolean())
 					return new ItemStack(ItemsAether.neptuneChestplate);
-				break;
+				return new ItemStack(ItemsAether.valkyrieLance);
 			}
 			case 7: {
-				if (random.nextBoolean())
-					return new ItemStack(ItemsAether.neptuneBoots);
-				return new ItemStack(ItemsAether.neptune_gloves);
+				return new ItemStack(ItemsAether.neptuneBoots);
 			}
 			case 8: {
-				if (random.nextBoolean())
-					return new ItemStack(ItemsAether.valkyrieBoots);
-				return new ItemStack(ItemsAether.valkyrie_gloves);
+				return new ItemStack(ItemsAether.valkyrieBoots);
 			}
 			case 9:
 				return new ItemStack(ItemsAether.valkyrieLeggings);
 			case 10:
-				if (random.nextBoolean())
-					return new ItemStack(ItemsAether.valkyrieChestplate);
+				return new ItemStack(ItemsAether.valkyrieChestplate);
 			case 11:
-				if (random.nextBoolean())
-					return new ItemStack(ItemsAether.valkyrieBoots);
-				return new ItemStack(ItemsAether.valkyrie_gloves);
+				return new ItemStack(ItemsAether.valkyrieBoots);
 			case 12:
 				if (AetherConfig.valkyrieCapeEnabled())
 					return new ItemStack(ItemsAether.valkyrieCape);

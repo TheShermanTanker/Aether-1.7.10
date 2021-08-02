@@ -40,18 +40,15 @@ public class BronzeDungeon extends AetherDungeon {
 		return true;
 	}
 
-	public boolean generateBossRoom(World world, Random random, int i, int j, int k)
-	{
+	public boolean generateBossRoom(World world, Random random, int i, int j, int k) {
 		if (!isBoxSolid(world, new PositionData(i, j - 3, k), new PositionData(16, 18, 16)) || !isBoxSolid(world, new PositionData(i + 20, j, k + 2), new PositionData(12, 12, 12))) {
 			return false;
 		}
 
 		RandomTracker randomTracker = new RandomTracker();
 
-		if (randomTracker.testRandom(random,15) != 0)
-		{
-			if (randomTracker.testRandom(random,40) != 0)
-			{
+		if (randomTracker.testRandom(random,15) != 0) {
+			if (randomTracker.testRandom(random,40) != 0) {
 				return false;
 			}
 		}
@@ -70,23 +67,21 @@ public class BronzeDungeon extends AetherDungeon {
 			world.spawnEntityInWorld(slider);
 		}
 
-		world.setBlock(i + 7, j - 1, k + 7, BlocksAether.treasureChest);
+		world.setBlock(i + 7, j - 1, k + 7, BlocksAether.treasureChestBronze);
 
 		generateEmptyRoom(world, random, i, j, k);
 
 		return true;
 	}
 
-	public boolean generateEmptyRoom(World world, Random random, int i, int j, int k)
-	{
+	public boolean generateEmptyRoom(World world, Random random, int i, int j, int k) {
 		int x = i;
 		int y = j;
 		int z = k;
 
 		int rooms = random.nextInt(4);
 
-		switch (rooms)
-		{
+		switch (rooms) {
 			case 0:
 			{
 				//EAST
@@ -107,7 +102,7 @@ public class BronzeDungeon extends AetherDungeon {
 
 				for (int p = x + 2; p < x + 10; p += 3) {
 					for (int q = z + 2; q < z + 10; q += 3) {
-						world.setBlock(p, j, q, BlocksAether.carved_trap, 0, 2);
+						world.setBlock(p, j, q, BlocksAether.carvedTrap, 0, 2);
 					}
 				}
 
@@ -133,7 +128,7 @@ public class BronzeDungeon extends AetherDungeon {
 
 				for (int p = x + 2; p < x + 10; p += 3) {
 					for (int q = z + 2; q < z + 10; q += 3) {
-						world.setBlock(p, j, q, BlocksAether.carved_trap, 0, 2);
+						world.setBlock(p, j, q, BlocksAether.carvedTrap, 0, 2);
 					}
 				}
 
@@ -159,7 +154,7 @@ public class BronzeDungeon extends AetherDungeon {
 
 				for (int p = x + 2; p < x + 10; p += 3) {
 					for (int q = z + 2; q < z + 10; q += 3) {
-						world.setBlock(p, j, q, BlocksAether.carved_trap, 0, 2);
+						world.setBlock(p, j, q, BlocksAether.carvedTrap, 0, 2);
 					}
 				}
 
@@ -185,7 +180,7 @@ public class BronzeDungeon extends AetherDungeon {
 
 				for (int p = x + 2; p < x + 10; p += 3) {
 					for (int q = z + 2; q < z + 10; q += 3) {
-						world.setBlock(p, j, q, BlocksAether.carved_trap, 0, 2);
+						world.setBlock(p, j, q, BlocksAether.carvedTrap, 0, 2);
 					}
 				}
 				break;
@@ -303,7 +298,7 @@ public class BronzeDungeon extends AetherDungeon {
 			for (int q = y; q < y + 8; q++) {
 				for (int r = z; r < z + 12; r++) {
 					if (world.getBlock(p, q, r) == this.mainBlock() && random.nextInt(100) == 0) {
-						world.setBlock(p, q, r, BlocksAether.carved_trap);
+						world.setBlock(p, q, r, BlocksAether.carvedTrap);
 					}
 				}
 			}
@@ -311,7 +306,7 @@ public class BronzeDungeon extends AetherDungeon {
 
 		for (int p = x + 2; p < x + 10; p += 7) {
 			for (int q = z + 2; q < z + 10; q += 7) {
-				world.setBlock(p, pos.getY(), q, BlocksAether.carved_trap);
+				world.setBlock(p, pos.getY(), q, BlocksAether.carvedTrap);
 			}
 		}
 
@@ -437,8 +432,8 @@ public class BronzeDungeon extends AetherDungeon {
 						tunnelling = false;
 					}
 
-					if (hasBlock(world, new PositionData(x + 1, y, z), new PositionData(2, 8, 6), BlocksAether.carved_stone)
-							|| hasBlock(world, new PositionData(x + 1, y, z), new PositionData(2, 8, 6), BlocksAether.locked_carved_stone))
+					if (hasBlock(world, new PositionData(x + 1, y, z), new PositionData(2, 8, 6), BlocksAether.carvedStone)
+							|| hasBlock(world, new PositionData(x + 1, y, z), new PositionData(2, 8, 6), BlocksAether.lockedCarvedStone))
 					{
 						tunnelling = false;
 					}
@@ -492,8 +487,8 @@ public class BronzeDungeon extends AetherDungeon {
 						tunnelling = false;
 					}
 
-					if (hasBlock(world, new PositionData(x - 1, y, z), new PositionData(1, 8, 6), BlocksAether.carved_stone)
-							|| hasBlock(world, new PositionData(x - 1, y, z), new PositionData(1, 8, 6), BlocksAether.locked_carved_stone))
+					if (hasBlock(world, new PositionData(x - 1, y, z), new PositionData(1, 8, 6), BlocksAether.carvedStone)
+							|| hasBlock(world, new PositionData(x - 1, y, z), new PositionData(1, 8, 6), BlocksAether.lockedCarvedStone))
 					{
 						tunnelling = false;
 					}
@@ -548,8 +543,8 @@ public class BronzeDungeon extends AetherDungeon {
 						tunnelling = false;
 					}
 
-					if (hasBlock(world, new PositionData(x, y, z + 1), new PositionData(6, 8, 2), BlocksAether.carved_stone)
-							|| hasBlock(world, new PositionData(x, y, z + 1), new PositionData(6, 8, 2), BlocksAether.locked_carved_stone))
+					if (hasBlock(world, new PositionData(x, y, z + 1), new PositionData(6, 8, 2), BlocksAether.carvedStone)
+							|| hasBlock(world, new PositionData(x, y, z + 1), new PositionData(6, 8, 2), BlocksAether.lockedCarvedStone))
 					{
 						tunnelling = false;
 					}
@@ -603,8 +598,8 @@ public class BronzeDungeon extends AetherDungeon {
 						tunnelling = false;
 					}
 
-					if (hasBlock(world, new PositionData(x, y, z - 1), new PositionData(6, 8, 1), BlocksAether.carved_stone)
-							|| hasBlock(world, new PositionData(x, y, z - 1), new PositionData(6, 8, 1), BlocksAether.locked_carved_stone))
+					if (hasBlock(world, new PositionData(x, y, z - 1), new PositionData(6, 8, 1), BlocksAether.carvedStone)
+							|| hasBlock(world, new PositionData(x, y, z - 1), new PositionData(6, 8, 1), BlocksAether.lockedCarvedStone))
 					{
 						tunnelling = false;
 					}
@@ -688,7 +683,7 @@ public class BronzeDungeon extends AetherDungeon {
 				break;
 			}
 		}
-		return new ItemStack(BlocksAether.ambrosium_torch);
+		return new ItemStack(BlocksAether.ambrosiumTorch);
 	}
 
 	public static ItemStack getBronzeLoot(Random random) {
@@ -718,19 +713,19 @@ public class BronzeDungeon extends AetherDungeon {
 	}
 
 	public Block lockedLightBlock() {
-		return BlocksAether.locked_sentry_stone;
+		return BlocksAether.lockedSentryStone;
 	}
 
 	public Block lockedBlock() {
-		return BlocksAether.locked_carved_stone;
+		return BlocksAether.lockedCarvedStone;
 	}
 
 	public Block mainLightBlock() {
-		return BlocksAether.sentry_stone;
+		return BlocksAether.sentryStone;
 	}
 
 	public Block mainBlock() {
-		return BlocksAether.carved_stone;
+		return BlocksAether.carvedStone;
 	}
 
 	public Block fillerBlock() {
@@ -738,7 +733,7 @@ public class BronzeDungeon extends AetherDungeon {
 	}
 
 	public Block fillerBlock1() {
-		return BlocksAether.mossy_holystone;
+		return BlocksAether.mossyHolystone;
 	}
 
 }

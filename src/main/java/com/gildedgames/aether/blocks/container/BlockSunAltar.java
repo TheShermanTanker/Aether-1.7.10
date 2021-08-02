@@ -46,7 +46,7 @@ public class BlockSunAltar extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
-		return side == 1 ? this.blockIconTop : (side == 0 ? BlocksAether.hellfire_stone.getBlockTextureFromSide(side) : this.blockIcon);
+		return side == 1 ? this.blockIconTop : (side == 0 ? BlocksAether.hellfireStone.getBlockTextureFromSide(side) : this.blockIcon);
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public class BlockSunAltar extends Block {
 		if (side == 1) {
 			return this.blockIconTop;
 		} else if (side == 0) {
-			return BlocksAether.hellfire_stone.getBlockTextureFromSide(side);
+			return BlocksAether.hellfireStone.getBlockTextureFromSide(side);
 		}
 
 		return this.blockIcon;

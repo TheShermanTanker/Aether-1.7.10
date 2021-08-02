@@ -18,7 +18,7 @@ public class MapGenQuicksoil extends MapGenBase {
 					for (int n = 3; n < 48; n++) {
 						int pos = (z * 16 + x) * 128 + n;
 
-						if (blocks[pos] == Blocks.air && blocks[(z * 16 + x) * 128 + (n + 1)] == BlocksAether.aether_grass && blocks[(z * 16 + x) * 128 + (n + 2)] == Blocks.air) {
+						if (blocks[pos] == Blocks.air && blocks[(z * 16 + x) * 128 + (n + 1)] == BlocksAether.aetherGrass && blocks[(z * 16 + x) * 128 + (n + 2)] == Blocks.air) {
 							this.generate(blocks, x, n, z);
 							n += 128;
 						}

@@ -1,6 +1,6 @@
 package com.gildedgames.aether.tileentity;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import com.gildedgames.aether.world.dungeon.BronzeDungeon;
 import com.gildedgames.aether.world.gen.components.ComponentGoldenDungeon;
@@ -21,6 +21,29 @@ public class TileEntityTreasureChest extends TileEntityChest {
 
 	private int kind = 0;
 
+	public TileEntityTreasureChest(int dungeonType) {
+		this.kind = dungeonType;
+		int p;
+
+		if (this.kind == 0) {
+			for (p = 0; p < 5 + ThreadLocalRandom.current().nextInt(1); ++p) {
+				this.setInventorySlotContents(ThreadLocalRandom.current().nextInt(this.getSizeInventory()), BronzeDungeon.getBronzeLoot(ThreadLocalRandom.current()));
+			}
+		}
+
+		if (this.kind == 1) {
+			for (p = 0; p < 5 + ThreadLocalRandom.current().nextInt(1); ++p) {
+				this.setInventorySlotContents(ThreadLocalRandom.current().nextInt(this.getSizeInventory()), ComponentSilverDungeon.getSilverLoot(ThreadLocalRandom.current()));
+			}
+		}
+
+		if (this.kind == 2) {
+			for (p = 0; p < 5 + ThreadLocalRandom.current().nextInt(1); ++p) {
+				this.setInventorySlotContents(ThreadLocalRandom.current().nextInt(this.getSizeInventory()), ComponentGoldenDungeon.getGoldLoot(ThreadLocalRandom.current()));
+			}
+		}
+	}
+
 	@Override
 	public void readFromNBT(NBTTagCompound compound) {
 		super.readFromNBT(compound);
@@ -38,27 +61,7 @@ public class TileEntityTreasureChest extends TileEntityChest {
 	}
 
 	public void unlock(int kind) {
-		this.kind = kind;
-		Random random = new Random();
-		int p;
-
-		if (kind == 0) {
-			for (p = 0; p < 5 + random.nextInt(1); ++p) {
-				this.setInventorySlotContents(random.nextInt(this.getSizeInventory()), BronzeDungeon.getBronzeLoot(random));
-			}
-		}
-
-		if (kind == 1) {
-			for (p = 0; p < 5 + random.nextInt(1); ++p) {
-				this.setInventorySlotContents(random.nextInt(this.getSizeInventory()), ComponentSilverDungeon.getSilverLoot(random));
-			}
-		}
-
-		if (kind == 2) {
-			for (p = 0; p < 5 + random.nextInt(1); ++p) {
-				this.setInventorySlotContents(random.nextInt(this.getSizeInventory()), ComponentGoldenDungeon.getGoldLoot(random));
-			}
-		}
+		if(kind != this.kind) return;
 
 		this.locked = false;
 
@@ -74,9 +77,9 @@ public class TileEntityTreasureChest extends TileEntityChest {
 
 	@Override
 	public Packet getDescriptionPacket() {
-		NBTTagCompound var1 = new NBTTagCompound();
-		this.writeToNBT(var1);
-		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, var1);
+		NBTTagCompound nbttagcompound = new NBTTagCompound();
+		this.writeToNBT(nbttagcompound);
+		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, nbttagcompound);
 	}
 
 	@Override

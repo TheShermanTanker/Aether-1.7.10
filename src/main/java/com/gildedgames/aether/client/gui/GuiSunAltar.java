@@ -3,19 +3,19 @@ package com.gildedgames.aether.client.gui;
 import org.lwjgl.opengl.GL11;
 
 import com.gildedgames.aether.Aether;
-import com.gildedgames.aether.client.gui.button.GuiSunAltarSlider;
+import com.gildedgames.aether.client.gui.button.GUISunAltarSlider;
 
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class GuiSunAltar extends GuiScreen {
+public class GUISunAltar extends GuiScreen {
 
 	private static final ResourceLocation TEXTURE = Aether.locate("textures/gui/sun_altar.png");
 
 	private World world;
 
-	public GuiSunAltar() {
+	public GUISunAltar() {
 
 	}
 
@@ -26,7 +26,7 @@ public class GuiSunAltar extends GuiScreen {
 
 		this.world = this.mc.theWorld;
 
-		this.buttonList.add(new GuiSunAltarSlider(this.world, this.width / 2 - 75, this.height / 2, "Select Time"));
+		this.buttonList.add(new GUISunAltarSlider(this.world, this.width / 2 - 75, this.height / 2, "Select Time"));
 	}
 
 	@Override

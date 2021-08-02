@@ -17,7 +17,7 @@ public class AetherGenUtils {
 			y += structure.random.nextInt(4) - structure.random.nextInt(4);
 			z += structure.random.nextInt(8) - structure.random.nextInt(8);
 
-			if (structure.getBlockStateWithOffset(x, y, z).getMaterial() == Material.air && y < 255 && structure.getBlockStateWithOffset(x, y - 1, z) == BlocksAether.aether_grass) {
+			if (structure.getBlockStateWithOffset(x, y, z).getMaterial() == Material.air && y < 255 && structure.getBlockStateWithOffset(x, y - 1, z) == BlocksAether.aetherGrass) {
 				structure.setBlockWithOffset(x, y, z, state, meta);
 			}
 		}
@@ -28,7 +28,7 @@ public class AetherGenUtils {
 		int y = offsetY;
 		int z = offsetZ;
 
-		if (structure.getBlockStateWithOffset(x, y - 1, z) != BlocksAether.aether_grass && structure.getBlockStateWithOffset(x, y - 1, z) != BlocksAether.aether_dirt) {
+		if (structure.getBlockStateWithOffset(x, y - 1, z) != BlocksAether.aetherGrass && structure.getBlockStateWithOffset(x, y - 1, z) != BlocksAether.aetherDirt) {
 			return;
 		}
 
@@ -38,7 +38,7 @@ public class AetherGenUtils {
 			for (int y1 = y + 5; y1 < y + 12; y1++) {
 				for (int z1 = z - 3; z1 < z + 4; z1++) {
 					if ((x1 - x) * (x1 - x) + (y1 - y - 8) * (y1 - y - 8) + (z1 - z) * (z1 - z) < 12 + structure.random.nextInt(5)) {
-						structure.setBlockWithOffset(x1, y1, z1, BlocksAether.golden_oak_leaves, 0);
+						structure.setBlockWithOffset(x1, y1, z1, BlocksAether.goldenOakLeaves, 0);
 					}
 				}
 			}
@@ -51,7 +51,7 @@ public class AetherGenUtils {
 				}
 			}
 
-			structure.setBlockWithOffset(x, y + n, z, BlocksAether.golden_oak_log, 0);
+			structure.setBlockWithOffset(x, y + n, z, BlocksAether.goldenOakLog, 0);
 		}
 	}
 
@@ -69,9 +69,9 @@ public class AetherGenUtils {
 			i -= directionX;
 			k -= directionZ;
 
-			if (structure.getBlockStateWithOffset(x, y, z) == BlocksAether.golden_oak_leaves) {
-				structure.setBlockWithOffset(x, y, z, BlocksAether.golden_oak_log, 0);
-				structure.setBlockWithOffset(i, y, k, BlocksAether.golden_oak_log, 0);
+			if (structure.getBlockStateWithOffset(x, y, z) == BlocksAether.goldenOakLeaves) {
+				structure.setBlockWithOffset(x, y, z, BlocksAether.goldenOakLog, 0);
+				structure.setBlockWithOffset(i, y, k, BlocksAether.goldenOakLog, 0);
 			}
 		}
 	}

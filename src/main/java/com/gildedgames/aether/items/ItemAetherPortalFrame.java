@@ -72,7 +72,7 @@ public class ItemAetherPortalFrame extends Item
 
         final Block frameBlock = Blocks.glowstone;
 
-        final Block portalBlock = BlocksAether.aether_portal;
+        final Block portalBlock = BlocksAether.aetherPortal;
 
         for (int zi = 1; zi < 3; ++zi)
         {

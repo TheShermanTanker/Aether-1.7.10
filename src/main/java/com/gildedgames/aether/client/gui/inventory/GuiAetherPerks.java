@@ -17,7 +17,7 @@ import com.gildedgames.aether.player.perks.AetherRankings;
 import com.gildedgames.aether.player.perks.util.DonatorMoaSkin;
 import com.gildedgames.aether.player.perks.util.EnumAetherPerkType;
 
-public class GuiAetherPerks extends GuiScreen {
+public class GUIAetherPerks extends GuiScreen {
 
 	private boolean enableMoaEditor, enableHaloEditor;
 
@@ -37,7 +37,7 @@ public class GuiAetherPerks extends GuiScreen {
 
 	protected int guiTop;
 
-	public GuiAetherPerks() {
+	public GUIAetherPerks() {
 		super();
 
 		this.mc = Minecraft.getMinecraft();

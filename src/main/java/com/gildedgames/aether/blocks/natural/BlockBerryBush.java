@@ -31,7 +31,7 @@ public class BlockBerryBush extends BlockAetherFlower {
 
 	@Override
 	public Item getItemDropped(int meta, Random rand, int fortune) {
-		return Item.getItemFromBlock(BlocksAether.berry_bush_stem);
+		return Item.getItemFromBlock(BlocksAether.berryBushStem);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class BlockBerryBush extends BlockAetherFlower {
 	public void harvestBlock(World world, EntityPlayer entityplayer, int x, int y, int z, int meta) {
 		int min, max;
 
-		if (world.getBlock(x, y, z) == BlocksAether.enchanted_aether_grass) {
+		if (world.getBlock(x, y, z) == BlocksAether.enchantedAetherGrass) {
 			min = 1;
 			max = 4;
 		} else {
@@ -55,7 +55,7 @@ public class BlockBerryBush extends BlockAetherFlower {
 		entityplayer.addStat(StatList.mineBlockStatArray[Block.getIdFromBlock(this)], 1);
 		entityplayer.addExhaustion(0.025F);
 
-		world.setBlock(x, y, z, BlocksAether.berry_bush_stem);
+		world.setBlock(x, y, z, BlocksAether.berryBushStem);
 
 		if (randomNum != 0) {
 			this.dropBlockAsItem(world, x, y, z, new ItemStack(ItemsAether.blueberry, randomNum, 0));
@@ -67,7 +67,7 @@ public class BlockBerryBush extends BlockAetherFlower {
 		if (!this.canBlockStay(world, x, y, z)) {
 			int min, max;
 
-			if (world.getBlock(x, y, z) == BlocksAether.enchanted_aether_grass) {
+			if (world.getBlock(x, y, z) == BlocksAether.enchantedAetherGrass) {
 				min = 1;
 				max = 4;
 			} else {
@@ -77,7 +77,7 @@ public class BlockBerryBush extends BlockAetherFlower {
 
 			int randomNum = world.rand.nextInt(max - min + 1) + min;
 			this.dropBlockAsItem(world, x, y, z, new ItemStack(ItemsAether.blueberry, randomNum, 0));
-			world.setBlock(x, y, z, BlocksAether.berry_bush_stem);
+			world.setBlock(x, y, z, BlocksAether.berryBushStem);
 		}
 	}
 

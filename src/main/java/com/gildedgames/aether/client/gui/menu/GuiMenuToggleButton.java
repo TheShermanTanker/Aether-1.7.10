@@ -7,9 +7,9 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
 
-public class GuiMenuToggleButton extends GuiButton
+public class GUIMenuToggleButton extends GuiButton
 {
-    public GuiMenuToggleButton(int xPos, int yPos)
+    public GUIMenuToggleButton(int xPos, int yPos)
     {
         super(50, xPos, yPos, 20, 20, "T");
     }
@@ -37,7 +37,7 @@ public class GuiMenuToggleButton extends GuiButton
         }
     }
 
-    public GuiMenuToggleButton setPosition(int x, int y)
+    public GUIMenuToggleButton setPosition(int x, int y)
     {
         this.xPosition = x;
         this.yPosition = y;

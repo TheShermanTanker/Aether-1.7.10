@@ -44,15 +44,15 @@ public class BlockAetherGrass extends Block implements IGrowable {
 	public void updateTick(World worldIn, int x, int y, int z, Random rand) {
 		if (!worldIn.isRemote) {
 			if (worldIn.getBlockLightValue(x, y + 1, z) < 4 && worldIn.getBlockLightOpacity(x, y + 1, z) > 2) {
-				worldIn.setBlock(x, y, z, BlocksAether.aether_dirt);
+				worldIn.setBlock(x, y, z, BlocksAether.aetherDirt);
 			} else if (worldIn.getBlockLightValue(x, y + 1, z) >= 9) {
 				for (int l = 0; l < 4; ++l) {
 					int i1 = x + rand.nextInt(3) - 1;
 					int j1 = y + rand.nextInt(5) - 3;
 					int k1 = z + rand.nextInt(3) - 1;
 
-					if (worldIn.getBlock(i1, j1, k1) == BlocksAether.aether_dirt && worldIn.getBlockMetadata(i1, j1, k1) == 0 && worldIn.getBlockLightValue(i1, j1 + 1, k1) >= 4 && worldIn.getBlockLightOpacity(i1, j1 + 1, k1) <= 2) {
-						worldIn.setBlock(i1, j1, k1, BlocksAether.aether_grass);
+					if (worldIn.getBlock(i1, j1, k1) == BlocksAether.aetherDirt && worldIn.getBlockMetadata(i1, j1, k1) == 0 && worldIn.getBlockLightValue(i1, j1 + 1, k1) >= 4 && worldIn.getBlockLightOpacity(i1, j1 + 1, k1) <= 2) {
+						worldIn.setBlock(i1, j1, k1, BlocksAether.aetherGrass);
 					}
 				}
 			}
@@ -61,7 +61,7 @@ public class BlockAetherGrass extends Block implements IGrowable {
 
 	@Override
 	public Item getItemDropped(int meta, Random random, int fortune) {
-		return Item.getItemFromBlock(BlocksAether.aether_dirt);
+		return Item.getItemFromBlock(BlocksAether.aetherDirt);
 	}
 
 	@Override
@@ -85,7 +85,7 @@ public class BlockAetherGrass extends Block implements IGrowable {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
-		return side == 1 ? this.blockIconTop : (side == 0 ? BlocksAether.aether_dirt.getBlockTextureFromSide(side) : this.blockIcon);
+		return side == 1 ? this.blockIconTop : (side == 0 ? BlocksAether.aetherDirt.getBlockTextureFromSide(side) : this.blockIcon);
 	}
 
 	@Override
@@ -97,7 +97,7 @@ public class BlockAetherGrass extends Block implements IGrowable {
 		}
 		else if (side == 0)
 		{
-			return BlocksAether.aether_dirt.getBlockTextureFromSide(side);
+			return BlocksAether.aetherDirt.getBlockTextureFromSide(side);
 		}
 		else
 		{
@@ -139,7 +139,7 @@ public class BlockAetherGrass extends Block implements IGrowable {
 					j1 += (p_149853_2_.nextInt(3) - 1) * p_149853_2_.nextInt(3) / 2;
 					k1 += p_149853_2_.nextInt(3) - 1;
 
-					if (p_149853_1_.getBlock(i1, j1 - 1, k1) == BlocksAether.aether_grass && !p_149853_1_.getBlock(i1, j1, k1).isNormalCube()) {
+					if (p_149853_1_.getBlock(i1, j1 - 1, k1) == BlocksAether.aetherGrass && !p_149853_1_.getBlock(i1, j1, k1).isNormalCube()) {
 						++l1;
 						continue;
 					}
@@ -149,8 +149,8 @@ public class BlockAetherGrass extends Block implements IGrowable {
 							p_149853_1_.setBlock(i1, j1, k1, Blocks.tallgrass, 1, 3);
 						}
 					} else if (p_149853_2_.nextInt(12) == 0) {
-						if (BlocksAether.berry_bush_stem.canBlockStay(p_149853_1_, i1, j1, k1)) {
-							p_149853_1_.setBlock(i1, j1, k1, BlocksAether.berry_bush_stem, 0, 3);
+						if (BlocksAether.berryBushStem.canBlockStay(p_149853_1_, i1, j1, k1)) {
+							p_149853_1_.setBlock(i1, j1, k1, BlocksAether.berryBushStem, 0, 3);
 						}
 					} else {
 						AetherWorld.aether_biome.plantFlower(p_149853_1_, p_149853_2_, i1, j1, k1);

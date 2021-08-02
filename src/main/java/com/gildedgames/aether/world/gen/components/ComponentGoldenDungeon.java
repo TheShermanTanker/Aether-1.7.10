@@ -35,7 +35,7 @@ public class ComponentGoldenDungeon extends AetherStructure {
 		r = (int) Math.floor((double) r * 0.8D);
 		int wid = (int) Math.sqrt((r * r) / 2);
 
-		this.setBlocks(BlocksAether.locked_hellfire_stone, BlocksAether.locked_light_hellfire_stone, 10);
+		this.setBlocks(BlocksAether.lockedHellfireStone, BlocksAether.lockedLightHellfireStone, 10);
 
 		for (int j = 4; j > -5; j--) {
 			int a = wid;
@@ -92,7 +92,7 @@ public class ComponentGoldenDungeon extends AetherStructure {
 					}
 
 					if (!BlocksAether.isGood(this.getBlockStateWithOffset(a, j, b))) {
-						this.setBlocks(BlocksAether.holystone, BlocksAether.mossy_holystone, 5);
+						this.setBlocks(BlocksAether.holystone, BlocksAether.mossyHolystone, 5);
 
 						if (j == -3) {
 							this.setBlockWithOffset(a, j, b);
@@ -101,7 +101,7 @@ public class ComponentGoldenDungeon extends AetherStructure {
 								if (k < 2 && k > -2 && j < 0) {
 									this.setBlockWithOffset(a, j, b, Blocks.air, 0);
 								} else {
-									this.setBlocks(BlocksAether.locked_hellfire_stone, BlocksAether.locked_light_hellfire_stone, 10);
+									this.setBlocks(BlocksAether.lockedHellfireStone, BlocksAether.lockedLightHellfireStone, 10);
 
 									this.setBlockWithOffset(a, j, b);
 								}
@@ -117,10 +117,10 @@ public class ComponentGoldenDungeon extends AetherStructure {
 								}
 							}
 						} else if (i == wid) {
-							this.setBlocks(BlocksAether.locked_hellfire_stone, BlocksAether.locked_light_hellfire_stone, 10);
+							this.setBlocks(BlocksAether.lockedHellfireStone, BlocksAether.lockedLightHellfireStone, 10);
 							this.setBlockWithOffset(a, j, b);
 						} else {
-							this.setBlocks(BlocksAether.holystone, BlocksAether.mossy_holystone, 5);
+							this.setBlocks(BlocksAether.holystone, BlocksAether.mossyHolystone, 5);
 							this.setBlockWithOffset(a, j, b);
 						}
 					}
@@ -128,7 +128,7 @@ public class ComponentGoldenDungeon extends AetherStructure {
 					a = -a;
 					b = -b;
 
-					this.setBlocks(BlocksAether.locked_hellfire_stone, BlocksAether.locked_light_hellfire_stone, 10);
+					this.setBlocks(BlocksAether.lockedHellfireStone, BlocksAether.lockedLightHellfireStone, 10);
 
 					if (i < wid + 6) {
 						if (j == -3) {
@@ -144,7 +144,7 @@ public class ComponentGoldenDungeon extends AetherStructure {
 								this.setBlockWithOffset(a, j, b);
 							} else {
 								if (i == wid + 4 && k == 0 && j == -2) {
-									this.setBlockWithOffset(a, j, b, BlocksAether.treasureChest, 0);
+									this.setBlockWithOffset(a, j, b, BlocksAether.treasureChestGolden, 0);
 								} else if (k == 3 || k == -3) {
 									this.setBlockWithOffset(a, j, b);
 								} else {
@@ -194,14 +194,10 @@ public class ComponentGoldenDungeon extends AetherStructure {
 					return new ItemStack(ItemsAether.phoenixChestplate);
 				}
 
-				break;
+				return new ItemStack(ItemsAether.obsidianHelmet);
 			}
 			case 4: {
-				if (random.nextBoolean()) {
-					return new ItemStack(ItemsAether.phoenixBoots);
-				}
-
-				return new ItemStack(ItemsAether.phoenix_gloves);
+				return new ItemStack(ItemsAether.phoenixBoots);
 			}
 			case 5: {
 				return new ItemStack(ItemsAether.lifeShard);
@@ -218,19 +214,14 @@ public class ComponentGoldenDungeon extends AetherStructure {
 				if (random.nextBoolean()) {
 					return new ItemStack(ItemsAether.gravititeChestplate);
 				}
-
-				break;
+				return new ItemStack(ItemsAether.obsidianBoots);
 			}
 			case 7: {
-				if (random.nextBoolean()) {
-					return new ItemStack(ItemsAether.gravititeBoots);
-				}
-
-				return new ItemStack(ItemsAether.gravitite_gloves);
+				return new ItemStack(ItemsAether.gravititeBoots);
 			}
 
 			case 8:
-				return new ItemStack(ItemsAether.chain_gloves);
+				return new ItemStack(ItemsAether.obsidianLeggings);
 
 		}
 

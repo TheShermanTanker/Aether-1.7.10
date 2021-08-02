@@ -6,7 +6,7 @@ import com.gildedgames.aether.Aether;
 import com.gildedgames.aether.api.player.util.IAetherBoss;
 import com.gildedgames.aether.blocks.BlocksAether;
 import com.gildedgames.aether.blocks.dungeon.BlockDungeonBase;
-import com.gildedgames.aether.client.gui.dialogue.entity.GuiValkyrieDialogue;
+import com.gildedgames.aether.client.gui.dialogue.entity.GUIValkyrieDialogue;
 import com.gildedgames.aether.entities.ai.EntityAIAttackContinuously;
 import com.gildedgames.aether.entities.ai.valkyrie_queen.ValkyrieQueenAIWander;
 import com.gildedgames.aether.entities.projectile.crystals.EntityCrystal;
@@ -151,7 +151,7 @@ public class EntityValkyrieQueen extends EntityBossMob implements IAetherBoss {
                 for (int z = this.dungeonZ - 6; z < this.dungeonZ + 26; z++) {
                     Block block = this.worldObj.getBlock(x, y, z);
 
-                    if (block == BlocksAether.locked_angelic_stone || block == BlocksAether.locked_light_angelic_stone) {
+                    if (block == BlocksAether.lockedAngelicStone || block == BlocksAether.lockedLightAngelicStone) {
                         this.worldObj.setBlock(x, y, z, ((BlockDungeonBase) block).getUnlockedBlock());
                     }
                 }
@@ -184,7 +184,7 @@ public class EntityValkyrieQueen extends EntityBossMob implements IAetherBoss {
     @SideOnly(Side.CLIENT)
     public void displayValkyrieDialogue() {
         if (this.worldObj.isRemote) {
-            FMLClientHandler.instance().getClient().displayGuiScreen(new GuiValkyrieDialogue(this));
+            FMLClientHandler.instance().getClient().displayGuiScreen(new GUIValkyrieDialogue(this));
         }
     }
 
@@ -247,12 +247,12 @@ public class EntityValkyrieQueen extends EntityBossMob implements IAetherBoss {
                 {
                     Block state = this.worldObj.getBlock(this.dungeonX - 1, this.dungeonY, this.dungeonZ + k);
 
-                    if (state != BlocksAether.locked_angelic_stone || state != BlocksAether.locked_light_angelic_stone)
+                    if (state != BlocksAether.lockedAngelicStone || state != BlocksAether.lockedLightAngelicStone)
                     {
-                        this.worldObj.setBlock(this.dungeonX - 1, this.dungeonY, this.dungeonZ + k, BlocksAether.locked_angelic_stone);
-                        this.worldObj.setBlock(this.dungeonX - 1, this.dungeonY, this.dungeonZ + k + 1, BlocksAether.locked_angelic_stone);
-                        this.worldObj.setBlock(this.dungeonX - 1, this.dungeonY + 1, this.dungeonZ + k + 1, BlocksAether.locked_angelic_stone);
-                        this.worldObj.setBlock(this.dungeonX - 1, this.dungeonY + 1, this.dungeonZ + k, BlocksAether.locked_angelic_stone);
+                        this.worldObj.setBlock(this.dungeonX - 1, this.dungeonY, this.dungeonZ + k, BlocksAether.lockedAngelicStone);
+                        this.worldObj.setBlock(this.dungeonX - 1, this.dungeonY, this.dungeonZ + k + 1, BlocksAether.lockedAngelicStone);
+                        this.worldObj.setBlock(this.dungeonX - 1, this.dungeonY + 1, this.dungeonZ + k + 1, BlocksAether.lockedAngelicStone);
+                        this.worldObj.setBlock(this.dungeonX - 1, this.dungeonY + 1, this.dungeonZ + k, BlocksAether.lockedAngelicStone);
                         this.dungeonEntranceZ = this.dungeonZ + k;
                     }
                 }

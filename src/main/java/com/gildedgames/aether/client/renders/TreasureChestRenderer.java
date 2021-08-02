@@ -30,7 +30,7 @@ public class TreasureChestRenderer extends TileEntitySpecialRenderer {
 		int var9;
 
 		if (par1TileEntityChest == null) {
-			TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileEntityTreasureChest(), 0.0, 0.0, 0.0, 0.0F);
+			TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileEntityTreasureChest(3), 0.0, 0.0, 0.0, 0.0F);
 			return;
 		}
 

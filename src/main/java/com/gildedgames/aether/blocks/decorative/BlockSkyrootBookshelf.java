@@ -29,7 +29,7 @@ public class BlockSkyrootBookshelf extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
-		return p_149691_1_ != 1 && p_149691_1_ != 0 ? super.getIcon(p_149691_1_, p_149691_2_) : BlocksAether.skyroot_planks.getBlockTextureFromSide(p_149691_1_);
+		return p_149691_1_ != 1 && p_149691_1_ != 0 ? super.getIcon(p_149691_1_, p_149691_2_) : BlocksAether.skyrootPlanks.getBlockTextureFromSide(p_149691_1_);
 	}
 
 	@Override

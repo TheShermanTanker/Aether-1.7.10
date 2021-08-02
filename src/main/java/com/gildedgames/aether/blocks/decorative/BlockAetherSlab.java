@@ -30,20 +30,20 @@ public class BlockAetherSlab extends BlockSlab {
 	}
 
 	public Block getDroppedSlab() {
-		if (this == BlocksAether.skyroot_double_slab) {
-			return BlocksAether.skyroot_slab;
-		} else if (this == BlocksAether.carved_double_slab) {
-			return BlocksAether.carved_slab;
-		} else if (this == BlocksAether.angelic_double_slab) {
-			return BlocksAether.angelic_slab;
-		} else if (this == BlocksAether.hellfire_double_slab) {
-			return BlocksAether.hellfire_slab;
-		} else if (this == BlocksAether.holystone_brick_double_slab) {
-			return BlocksAether.holystone_brick_slab;
-		} else if (this == BlocksAether.holystone_double_slab) {
-			return BlocksAether.holystone_slab;
-		} else if (this == BlocksAether.mossy_holystone_double_slab) {
-			return BlocksAether.mossy_holystone_slab;
+		if (this == BlocksAether.skyrootDoubleSlab) {
+			return BlocksAether.skyrootSlab;
+		} else if (this == BlocksAether.carvedDoubleSlab) {
+			return BlocksAether.carvedSlab;
+		} else if (this == BlocksAether.angelicDoubleSlab) {
+			return BlocksAether.angelicSlab;
+		} else if (this == BlocksAether.hellfireDoubleSlab) {
+			return BlocksAether.hellfireSlab;
+		} else if (this == BlocksAether.holystoneBrickDoubleSlab) {
+			return BlocksAether.holystoneBrickSlab;
+		} else if (this == BlocksAether.holystoneDoubleSlab) {
+			return BlocksAether.holystoneSlab;
+		} else if (this == BlocksAether.mossyHolystoneDoubleSlab) {
+			return BlocksAether.mossyHolystoneSlab;
 		} else {
 			return this;
 		}
@@ -67,6 +67,6 @@ public class BlockAetherSlab extends BlockSlab {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getRenderBlockPass() {
-		return this == BlocksAether.aerogel_slab || this == BlocksAether.aerogel_double_slab ? 1 : 0;
+		return this == BlocksAether.aerogelSlab || this == BlocksAether.aerogelDoubleSlab ? 1 : 0;
 	}
 }

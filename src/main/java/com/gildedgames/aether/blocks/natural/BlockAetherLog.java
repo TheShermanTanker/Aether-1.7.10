@@ -60,7 +60,7 @@ public class BlockAetherLog extends BlockLog {
 		{
 			if (stack != null && ((stack.getItem() instanceof ItemAetherTool && ((ItemAetherTool) stack.getItem()).toolType == EnumAetherToolType.AXE) || stack.getItem() == Items.diamond_axe)) {
 				if (stack.getItem() instanceof ItemZaniteTool || stack.getItem() instanceof ItemGravititeTool || stack.getItem() instanceof ItemValkyrieTool || stack.getItem() == Items.diamond_axe) {
-					if (this == BlocksAether.golden_oak_log) {
+					if (this == BlocksAether.goldenOakLog) {
 						this.dropBlockAsItem(worldIn, x, y, z, new ItemStack(ItemsAether.goldenAmber, 1 + worldIn.rand.nextInt(2)));
 					}
 
@@ -80,7 +80,7 @@ public class BlockAetherLog extends BlockLog {
 
 	@Override
 	public Item getItemDropped(int meta, Random random, int fortune) {
-		return Item.getItemFromBlock(BlocksAether.skyroot_log);
+		return Item.getItemFromBlock(BlocksAether.skyrootLog);
 	}
 
 	@Override

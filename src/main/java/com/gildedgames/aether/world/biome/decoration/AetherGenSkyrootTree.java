@@ -21,11 +21,11 @@ public class AetherGenSkyrootTree extends WorldGenAbstractTree {
 
 		Block j1 = world.getBlock(x, y - 1, z);
 
-		if (j1 != BlocksAether.aether_grass && j1 != BlocksAether.aether_dirt) {
+		if (j1 != BlocksAether.aetherGrass && j1 != BlocksAether.aetherDirt) {
 			return false;
 		}
 
-		this.setBlockAndNotifyAdequately(world, x, y - 1, z, BlocksAether.aether_dirt, 0);
+		this.setBlockAndNotifyAdequately(world, x, y - 1, z, BlocksAether.aetherDirt, 0);
 
 		for (int k1 = (y - 3) + l; k1 <= y + l; k1++) {
 			int j2 = k1 - (y + l);
@@ -38,7 +38,7 @@ public class AetherGenSkyrootTree extends WorldGenAbstractTree {
 					int j4 = i4 - z;
 
 					if ((Math.abs(l3) != i3 || Math.abs(j4) != i3 || random.nextInt(2) != 0 && j2 != 0) && !world.getBlock(k3, k1, i4).isOpaqueCube()) {
-						this.setBlockAndNotifyAdequately(world, k3, k1, i4, BlocksAether.skyroot_leaves, 0);
+						this.setBlockAndNotifyAdequately(world, k3, k1, i4, BlocksAether.skyrootLeaves, 0);
 					}
 				}
 
@@ -48,8 +48,8 @@ public class AetherGenSkyrootTree extends WorldGenAbstractTree {
 		for (int l1 = 0; l1 < l; l1++) {
 			Block k2 = world.getBlock(x, y + l1, z);
 
-			if (k2 == Blocks.air || k2 == BlocksAether.skyroot_leaves) {
-				this.setBlockAndNotifyAdequately(world, x, y + l1, z, BlocksAether.skyroot_log, 0);
+			if (k2 == Blocks.air || k2 == BlocksAether.skyrootLeaves) {
+				this.setBlockAndNotifyAdequately(world, x, y + l1, z, BlocksAether.skyrootLog, 0);
 			}
 		}
 

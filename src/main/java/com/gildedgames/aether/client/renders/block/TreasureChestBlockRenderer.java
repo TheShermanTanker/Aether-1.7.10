@@ -18,7 +18,7 @@ public class TreasureChestBlockRenderer implements ISimpleBlockRenderingHandler 
 	public void renderInventoryBlock(Block block, int metadata, int modelId, RenderBlocks renderer) {
 		GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
 		GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
-		TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileEntityTreasureChest(), 0.0, 0.0, 0.0, 0f);
+		TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileEntityTreasureChest(3), 0.0, 0.0, 0.0, 0f);
 		GL11.glEnable(GL12.GL_RESCALE_NORMAL);
 	}
 

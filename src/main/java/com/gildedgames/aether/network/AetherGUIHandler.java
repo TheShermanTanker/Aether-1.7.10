@@ -5,12 +5,12 @@ import net.minecraft.inventory.ContainerChest;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.world.World;
 
-import com.gildedgames.aether.client.gui.GuiEnchanter;
-import com.gildedgames.aether.client.gui.GuiFreezer;
-import com.gildedgames.aether.client.gui.GuiIncubator;
-import com.gildedgames.aether.client.gui.GuiLore;
-import com.gildedgames.aether.client.gui.GuiTreasureChest;
-import com.gildedgames.aether.client.gui.inventory.GuiAccessories;
+import com.gildedgames.aether.client.gui.GUIEnchanter;
+import com.gildedgames.aether.client.gui.GUIFreezer;
+import com.gildedgames.aether.client.gui.GUIIncubator;
+import com.gildedgames.aether.client.gui.GUILore;
+import com.gildedgames.aether.client.gui.GUITreasureChest;
+import com.gildedgames.aether.client.gui.inventory.GUIAccessories;
 import com.gildedgames.aether.inventory.ContainerAccessories;
 import com.gildedgames.aether.inventory.ContainerEnchanter;
 import com.gildedgames.aether.inventory.ContainerFreezer;
@@ -53,17 +53,17 @@ public class AetherGUIHandler implements IGuiHandler {
 	@SideOnly(Side.CLIENT)
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if (ID == ACCESSORIES) {
-			return new GuiAccessories(PlayerAether.get(player));
+			return new GUIAccessories(PlayerAether.get(player));
 		} else if (ID == ENCHANTER) {
-			return new GuiEnchanter(player.inventory, (TileEntityEnchanter) world.getTileEntity(x, y, z));
+			return new GUIEnchanter(player.inventory, (TileEntityEnchanter) world.getTileEntity(x, y, z));
 		} else if (ID == FREEZER) {
-			return new GuiFreezer(player.inventory, (TileEntityFreezer) world.getTileEntity(x, y, z));
+			return new GUIFreezer(player.inventory, (TileEntityFreezer) world.getTileEntity(x, y, z));
 		} else if (ID == INCUBATOR) {
-			return new GuiIncubator(player, player.inventory, (TileEntityIncubator) world.getTileEntity(x, y, z));
+			return new GUIIncubator(player, player.inventory, (TileEntityIncubator) world.getTileEntity(x, y, z));
 		} else if (ID == TREASURE_CHEST) {
-			return new GuiTreasureChest(player.inventory, (TileEntityTreasureChest) world.getTileEntity(x, y, z));
+			return new GUITreasureChest(player.inventory, (TileEntityTreasureChest) world.getTileEntity(x, y, z));
 		} else if (ID == LORE) {
-			return new GuiLore(player.inventory);
+			return new GUILore(player.inventory);
 		}
 
 		return null;

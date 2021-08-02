@@ -70,7 +70,7 @@ public class BlockAetherLeaves extends BlockLeaves {
 			return;
 		}
 
-		if (this == BlocksAether.golden_oak_leaves) {
+		if (this == BlocksAether.goldenOakLeaves) {
 			for (int ammount = 0; ammount < 2; ammount++) {
 				double d = x + (rand.nextFloat() - 0.5D) * 10;
 				double d1 = y + (rand.nextFloat() - 0.5D) * 10;
@@ -84,7 +84,7 @@ public class BlockAetherLeaves extends BlockLeaves {
 			}
 		}
 
-		if (this == BlocksAether.holiday_leaves || this == BlocksAether.decorated_holiday_leaves) {
+		if (this == BlocksAether.holidayLeaves || this == BlocksAether.decoratedHolidayLeaves) {
 			if (rand.nextInt(5) == 0) {
 				for (int l = 0; l < 6; ++l) {
 					double d = (double) x + ((double) rand.nextFloat() - 0.5D) * 8.0D;
@@ -100,7 +100,7 @@ public class BlockAetherLeaves extends BlockLeaves {
 			}
 		}
 
-		if (this == BlocksAether.crystal_leaves || this == BlocksAether.crystal_fruit_leaves) {
+		if (this == BlocksAether.crystalLeaves || this == BlocksAether.crystalFruitLeaves) {
 			if (rand.nextInt(5) == 0) {
 				for (int l = 0; l < 6; ++l) {
 					double d = (double) x + ((double) rand.nextFloat() - 0.5D) * 6.0D;
@@ -119,14 +119,14 @@ public class BlockAetherLeaves extends BlockLeaves {
 
 	@Override
 	public Item getItemDropped(int meta, Random random, int fortune) {
-		return this == BlocksAether.skyroot_leaves ? Item.getItemFromBlock(BlocksAether.skyroot_sapling) : this == BlocksAether.golden_oak_leaves ? Item.getItemFromBlock(BlocksAether.golden_oak_sapling) : null;
+		return this == BlocksAether.skyrootLeaves ? Item.getItemFromBlock(BlocksAether.skyrootSapling) : this == BlocksAether.goldenOakLeaves ? Item.getItemFromBlock(BlocksAether.goldenOakSapling) : null;
 	}
 
 	@Override
 	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune) {
 		ArrayList<ItemStack> drops = super.getDrops(world, x, y, z, metadata, fortune);
 
-		if (this == BlocksAether.crystal_fruit_leaves) {
+		if (this == BlocksAether.crystalFruitLeaves) {
 			drops.add(new ItemStack(ItemsAether.whiteApple));
 		}
 

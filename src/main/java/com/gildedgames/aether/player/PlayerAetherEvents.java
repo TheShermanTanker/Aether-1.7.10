@@ -128,7 +128,7 @@ public class PlayerAetherEvents {
 		if (event.entityLiving instanceof EntityPlayer) {
 			PlayerAether playerAether = PlayerAether.get((EntityPlayer) event.entityLiving);
 
-			if (playerAether.getAccessoryInventory().isWearingObsidianSet()) {
+			if (playerAether.getAccessoryInventory().wearingArmor(new ItemStack(ItemsAether.obsidianHelmet)) || playerAether.getAccessoryInventory().wearingArmor(new ItemStack(ItemsAether.obsidianChestplate)) || playerAether.getAccessoryInventory().wearingArmor(new ItemStack(ItemsAether.obsidianLeggings)) || playerAether.getAccessoryInventory().wearingArmor(new ItemStack(ItemsAether.obsidianBoots))) {
 				float original = event.ammount;
 
 				event.ammount = original / 2;

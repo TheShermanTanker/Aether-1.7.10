@@ -4,11 +4,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 
-public class GuiEnterAether extends GuiScreen
+public class GUIEnterAether extends GuiScreen
 {
     public boolean aether;
 
-    public GuiEnterAether(boolean dimension)
+    public GUIEnterAether(boolean dimension)
     {
         aether = dimension;
     }

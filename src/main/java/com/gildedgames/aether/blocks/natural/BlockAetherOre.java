@@ -55,7 +55,7 @@ public class BlockAetherOre extends Block {
 
 	@Override
 	public Item getItemDropped(int meta, Random random, int fortune) {
-		return this == BlocksAether.zanite_ore ? ItemsAether.zaniteGemstone : ItemsAether.ambrosiumShard;
+		return this == BlocksAether.zaniteOre ? ItemsAether.zaniteGemstone : ItemsAether.ambrosiumShard;
 	}
 
 	@Override
@@ -80,9 +80,9 @@ public class BlockAetherOre extends Block {
 		if (this.getItemDropped(p_149690_5_, random, p_149690_7_) != Item.getItemFromBlock(this)) {
 			int amount = 0;
 
-			if (this == BlocksAether.ambrosium_ore) {
+			if (this == BlocksAether.ambrosiumOre) {
 				amount = MathHelper.getRandomIntegerInRange(random, 0, 2);
-			} else if (this == BlocksAether.zanite_ore) {
+			} else if (this == BlocksAether.zaniteOre) {
 				amount = MathHelper.getRandomIntegerInRange(random, 2, 5);
 			}
 

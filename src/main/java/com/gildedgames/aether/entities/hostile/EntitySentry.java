@@ -232,7 +232,7 @@ public class EntitySentry extends EntityLiving implements IMob {
 
 	@Override
 	protected Item getDropItem() {
-		return this.rand.nextInt(5) == 0 ? Item.getItemFromBlock(BlocksAether.sentry_stone) : Item.getItemFromBlock(BlocksAether.carved_stone);
+		return this.rand.nextInt(5) == 0 ? Item.getItemFromBlock(BlocksAether.sentryStone) : Item.getItemFromBlock(BlocksAether.carvedStone);
 	}
 
 }

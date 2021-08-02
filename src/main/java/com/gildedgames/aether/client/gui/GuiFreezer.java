@@ -15,13 +15,13 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiFreezer extends GuiContainer {
+public class GUIFreezer extends GuiContainer {
 
 	private static final ResourceLocation TEXTURE = Aether.locate("textures/gui/altar.png");
 
 	private TileEntityFreezer freezer;
 
-	public GuiFreezer(InventoryPlayer inventory, TileEntityFreezer tileEntity) {
+	public GUIFreezer(InventoryPlayer inventory, TileEntityFreezer tileEntity) {
 		super(new ContainerFreezer(inventory, tileEntity));
 		this.freezer = tileEntity;
 	}

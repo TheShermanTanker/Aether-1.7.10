@@ -14,7 +14,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
@@ -22,33 +21,36 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockTreasureChest extends BlockChest {
 
-	public BlockTreasureChest() {
+	private int dungeonType;
+
+	public BlockTreasureChest(int dungeonType) {
 		super(56);
 
 		this.setHardness(-1.0F);
 		this.setResistance(2000.0F);
+		this.dungeonType = dungeonType;
 	}
 
 	@Override
-	public float getBlockHardness(World p_149712_1_, int p_149712_2_, int p_149712_3_, int p_149712_4_)
-	{
-		TileEntityTreasureChest treasurechest = (TileEntityTreasureChest) p_149712_1_.getTileEntity(p_149712_2_, p_149712_3_, p_149712_4_);
+	public float getBlockHardness(World world, int locX, int locY, int locZ) {
+		TileEntityTreasureChest treasurechest = (TileEntityTreasureChest) world.getTileEntity(locX, locY, locZ);
 
-		if (treasurechest != null)
-		{
+		if (treasurechest != null) {
 			return treasurechest.isLocked() ? this.blockHardness : 5.0F;
-		}
-		else {
+		} else {
 			return this.blockHardness;
 		}
 	}
 
 	@Override
-	public float getExplosionResistance(Entity entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
-	{
+	public float getExplosionResistance(Entity entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ) {
 		TileEntityTreasureChest treasurechest = (TileEntityTreasureChest) world.getTileEntity(x, y, z);
 
-		return treasurechest.isLocked() ? this.blockResistance : 10.0F;
+		if (treasurechest != null) {
+			return treasurechest.isLocked() ? this.blockResistance : 10.0F;
+		} else {
+			return this.blockResistance;
+		}
 	}
 
 	@Override
@@ -59,7 +61,7 @@ public class BlockTreasureChest extends BlockChest {
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileEntityTreasureChest();
+		return new TileEntityTreasureChest(this.dungeonType);
 	}
 
 	@Override
@@ -76,6 +78,7 @@ public class BlockTreasureChest extends BlockChest {
 			if (guiID == null || guiID != null && guiID.getItem() != ItemsAether.dungeonKey) {
 				return false;
 			}
+			if(guiID.getItemDamage() != treasurechest.getKind()) return false;
 
 			treasurechest.unlock(guiID.getItemDamage());
 

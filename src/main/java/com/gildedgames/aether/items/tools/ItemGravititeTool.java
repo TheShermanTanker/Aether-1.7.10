@@ -19,7 +19,7 @@ public class ItemGravititeTool extends ItemAetherTool {
 
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-		return repair.getItem() == Item.getItemFromBlock(BlocksAether.enchanted_gravitite);
+		return repair.getItem() == Item.getItemFromBlock(BlocksAether.enchantedGravitite);
 	}
 
 	@Override

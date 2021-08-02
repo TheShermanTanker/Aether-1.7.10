@@ -14,14 +14,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiTreasureChest extends GuiContainer {
+public class GUITreasureChest extends GuiContainer {
 	private static final ResourceLocation CHEST_GUI_TEXTURE = new ResourceLocation("textures/gui/container/generic_54.png");
 
 	private final int inventoryRows;
 
 	private String chestType;
 
-	public GuiTreasureChest(InventoryPlayer playerInventory, TileEntityTreasureChest chestInventory) {
+	public GUITreasureChest(InventoryPlayer playerInventory, TileEntityTreasureChest chestInventory) {
 		super(new ContainerChest(playerInventory, chestInventory));
 
 		this.allowUserInput = false;

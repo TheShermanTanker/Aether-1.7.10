@@ -342,32 +342,32 @@ public class InventoryAccessories implements IAccessoryInventory {
 
 	@Override
 	public boolean isWearingZaniteSet() {
-		return wearingArmor(new ItemStack(ItemsAether.zaniteHelmet)) && wearingArmor(new ItemStack(ItemsAether.zaniteChestplate)) && wearingArmor(new ItemStack(ItemsAether.zaniteLeggings)) && wearingArmor(new ItemStack(ItemsAether.zaniteBoots)) && wearingAccessory(new ItemStack(ItemsAether.zanite_gloves));
+		return wearingArmor(new ItemStack(ItemsAether.zaniteHelmet)) && wearingArmor(new ItemStack(ItemsAether.zaniteChestplate)) && wearingArmor(new ItemStack(ItemsAether.zaniteLeggings)) && wearingArmor(new ItemStack(ItemsAether.zaniteBoots));
 	}
 
 	@Override
 	public boolean isWearingGravititeSet() {
-		return wearingArmor(new ItemStack(ItemsAether.gravititeHelmet)) && wearingArmor(new ItemStack(ItemsAether.gravititeChestplate)) && wearingArmor(new ItemStack(ItemsAether.gravititeLeggings)) && wearingArmor(new ItemStack(ItemsAether.gravititeBoots)) && wearingAccessory(new ItemStack(ItemsAether.gravitite_gloves));
+		return wearingArmor(new ItemStack(ItemsAether.gravititeHelmet)) && wearingArmor(new ItemStack(ItemsAether.gravititeChestplate)) && wearingArmor(new ItemStack(ItemsAether.gravititeLeggings)) && wearingArmor(new ItemStack(ItemsAether.gravititeBoots));
 	}
 
 	@Override
 	public boolean isWearingNeptuneSet() {
-		return wearingArmor(new ItemStack(ItemsAether.neptuneHelmet)) && wearingArmor(new ItemStack(ItemsAether.neptuneChestplate)) && wearingArmor(new ItemStack(ItemsAether.neptuneLeggings)) && wearingArmor(new ItemStack(ItemsAether.neptuneBoots)) && wearingAccessory(new ItemStack(ItemsAether.neptune_gloves));
+		return wearingArmor(new ItemStack(ItemsAether.neptuneHelmet)) && wearingArmor(new ItemStack(ItemsAether.neptuneChestplate)) && wearingArmor(new ItemStack(ItemsAether.neptuneLeggings)) && wearingArmor(new ItemStack(ItemsAether.neptuneBoots));
 	}
 
 	@Override
 	public boolean isWearingPhoenixSet() {
-		return wearingArmor(new ItemStack(ItemsAether.phoenixHelmet)) && wearingArmor(new ItemStack(ItemsAether.phoenixChestplate)) && wearingArmor(new ItemStack(ItemsAether.phoenixLeggings)) && wearingArmor(new ItemStack(ItemsAether.phoenixBoots)) && wearingAccessory(new ItemStack(ItemsAether.phoenix_gloves));
+		return wearingArmor(new ItemStack(ItemsAether.phoenixHelmet)) && wearingArmor(new ItemStack(ItemsAether.phoenixChestplate)) && wearingArmor(new ItemStack(ItemsAether.phoenixLeggings)) && wearingArmor(new ItemStack(ItemsAether.phoenixBoots));
 	}
 
 	@Override
 	public boolean isWearingValkyrieSet() {
-		return wearingArmor(new ItemStack(ItemsAether.valkyrieHelmet)) && wearingArmor(new ItemStack(ItemsAether.valkyrieChestplate)) && wearingArmor(new ItemStack(ItemsAether.valkyrieLeggings)) && wearingArmor(new ItemStack(ItemsAether.valkyrieBoots)) && wearingAccessory(new ItemStack(ItemsAether.valkyrie_gloves));
+		return wearingArmor(new ItemStack(ItemsAether.valkyrieHelmet)) && wearingArmor(new ItemStack(ItemsAether.valkyrieChestplate)) && wearingArmor(new ItemStack(ItemsAether.valkyrieLeggings)) && wearingArmor(new ItemStack(ItemsAether.valkyrieBoots));
 	}
 
 	@Override
 	public boolean isWearingObsidianSet() {
-		return wearingArmor(new ItemStack(ItemsAether.obsidianHelmet)) && wearingArmor(new ItemStack(ItemsAether.obsidianChestplate)) && wearingArmor(new ItemStack(ItemsAether.obsidianLeggings)) && wearingArmor(new ItemStack(ItemsAether.obsidianBoots)) && wearingAccessory(new ItemStack(ItemsAether.obsidian_gloves));
+		return wearingArmor(new ItemStack(ItemsAether.obsidianHelmet)) && wearingArmor(new ItemStack(ItemsAether.obsidianChestplate)) && wearingArmor(new ItemStack(ItemsAether.obsidianLeggings)) && wearingArmor(new ItemStack(ItemsAether.obsidianBoots));
 	}
 
 	@Override

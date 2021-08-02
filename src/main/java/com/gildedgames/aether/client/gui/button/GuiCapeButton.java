@@ -6,9 +6,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
 
-public class GuiCapeButton extends GuiButton
+public class GUICapeButton extends GuiButton
 {
-    public GuiCapeButton(int xPos, int yPos)
+    public GUICapeButton(int xPos, int yPos)
     {
         super(203, xPos, yPos, 150, 20, I18n.format("gui.button.aether_cape"));
     }

@@ -77,18 +77,18 @@ public class AetherBiomeDecorator extends BiomeDecorator {
 		}
 
 		if (this.shouldSpawn(3)) {
-			this.spawnOre(BlocksAether.aether_dirt, 32, 20, 128);
+			this.spawnOre(BlocksAether.aetherDirt, 32, 20, 128);
 		}
 
-		this.generateFoilage(BlocksAether.white_flower);
-		this.generateFoilage(BlocksAether.purple_flower);
+		this.generateFoilage(BlocksAether.whiteFlower);
+		this.generateFoilage(BlocksAether.purpleFlower);
 
 		this.spawnOre(BlocksAether.icestone, 16, 10, 128);
-		this.spawnOre(BlocksAether.ambrosium_ore, 16, 15, 128);
-		this.spawnOre(BlocksAether.zanite_ore, 8, 12, 64);
-		this.spawnOre(BlocksAether.gravitite_ore, 6, 8, 32);
+		this.spawnOre(BlocksAether.ambrosiumOre, 16, 15, 128);
+		this.spawnOre(BlocksAether.zaniteOre, 8, 12, 64);
+		this.spawnOre(BlocksAether.gravititeOre, 6, 8, 32);
 
-		this.generateFoilage(BlocksAether.berry_bush);
+		this.generateFoilage(BlocksAether.berryBush);
 
 		for (int i3 = 0; i3 < 3; ++i3) {
 			int x = this.chunk_X + this.nextInt(16) + 8;

@@ -118,7 +118,7 @@ public class TileEntityIncubator extends AetherTileEntity {
 		}
 
 		if (this.powerRemaining <= 0) {
-			if (this.getStackInSlot(0) != null && this.getStackInSlot(1) != null && this.getStackInSlot(1).getItem() == ItemsAether.moaEgg && this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlocksAether.ambrosium_torch)) {
+			if (this.getStackInSlot(0) != null && this.getStackInSlot(1) != null && this.getStackInSlot(1).getItem() == ItemsAether.moaEgg && this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlocksAether.ambrosiumTorch)) {
 				this.powerRemaining += 1000;
 
 				if (!this.worldObj.isRemote) {
@@ -138,7 +138,7 @@ public class TileEntityIncubator extends AetherTileEntity {
 
 	@Override
 	public boolean isValidSlotItem(int index, ItemStack itemstack) {
-		return (index == 0 && itemstack.getItem() == Item.getItemFromBlock(BlocksAether.ambrosium_torch) ? true : (index == 1 && itemstack.getItem() == ItemsAether.moaEgg));
+		return (index == 0 && itemstack.getItem() == Item.getItemFromBlock(BlocksAether.ambrosiumTorch) ? true : (index == 1 && itemstack.getItem() == ItemsAether.moaEgg));
 	}
 
 	@Override

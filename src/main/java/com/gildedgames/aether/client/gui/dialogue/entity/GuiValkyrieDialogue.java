@@ -1,7 +1,7 @@
 package com.gildedgames.aether.client.gui.dialogue.entity;
 
 import com.gildedgames.aether.client.gui.dialogue.DialogueOption;
-import com.gildedgames.aether.client.gui.dialogue.GuiDialogue;
+import com.gildedgames.aether.client.gui.dialogue.GUIDialogue;
 import com.gildedgames.aether.entities.bosses.valkyriequeen.EntityValkyrieQueen;
 import com.gildedgames.aether.items.ItemsAether;
 import com.gildedgames.aether.network.AetherNetwork;
@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.EnumDifficulty;
 
-public class GuiValkyrieDialogue extends GuiDialogue {
+public class GUIValkyrieDialogue extends GUIDialogue {
 
     private EntityValkyrieQueen valkyrieQueen;
 
@@ -20,7 +20,7 @@ public class GuiValkyrieDialogue extends GuiDialogue {
 
     private int medalSlotId = -1;
 
-    public GuiValkyrieDialogue(EntityValkyrieQueen valkyrieQueen) {
+    public GUIValkyrieDialogue(EntityValkyrieQueen valkyrieQueen) {
         super("[\247e" + valkyrieQueen.getName() + ", " + I18n.format("title.aether_legacy.valkyrie_queen.name") + "\247r]", new DialogueOption(I18n.format("gui.queen.dialog.0")), new DialogueOption(I18n.format("gui.queen.dialog.1")), new DialogueOption(I18n.format("gui.queen.dialog.2")));
 
         this.title = this.getDialogue();

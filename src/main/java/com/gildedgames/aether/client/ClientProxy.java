@@ -17,8 +17,8 @@ import com.gildedgames.aether.AetherConfig;
 import com.gildedgames.aether.CommonProxy;
 import com.gildedgames.aether.client.audio.AetherMusicHandler;
 import com.gildedgames.aether.client.gui.AetherLoadingScreen;
-import com.gildedgames.aether.client.gui.GuiAetherInGame;
-import com.gildedgames.aether.client.gui.GuiSunAltar;
+import com.gildedgames.aether.client.gui.GUIAetherInGame;
+import com.gildedgames.aether.client.gui.GUISunAltar;
 import com.gildedgames.aether.client.renders.AetherEntityRenderer;
 import com.gildedgames.aether.client.renders.RendersAether;
 import com.gildedgames.aether.compatibility.client.AetherClientCompatibility;
@@ -84,7 +84,7 @@ public class ClientProxy extends CommonProxy {
 
 		registerEvent(new AetherMusicHandler());
 		registerEvent(new AetherClientEvents());
-		registerEvent(new GuiAetherInGame(Minecraft.getMinecraft()));
+		registerEvent(new GUIAetherInGame(Minecraft.getMinecraft()));
 
 		AetherClientCompatibility.initialization();
 	}
@@ -125,7 +125,7 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void openSunAltar() {
-		FMLClientHandler.instance().getClient().displayGuiScreen(new GuiSunAltar());
+		FMLClientHandler.instance().getClient().displayGuiScreen(new GUISunAltar());
 	}
 
 	@Override

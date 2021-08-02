@@ -153,7 +153,7 @@ public class BlockSkyrootBed extends BlockBed
     {
         if (p_149691_1_ == 0)
         {
-            return BlocksAether.skyroot_planks.getBlockTextureFromSide(p_149691_1_);
+            return BlocksAether.skyrootPlanks.getBlockTextureFromSide(p_149691_1_);
         }
         else
         {

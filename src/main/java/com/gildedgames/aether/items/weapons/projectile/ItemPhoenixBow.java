@@ -102,7 +102,7 @@ public class ItemPhoenixBow extends ItemBow {
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityPlayer entityLiving, int timeLeft) {
 		if (entityLiving instanceof EntityPlayer) {
 			EntityPlayer entityplayer = (EntityPlayer) entityLiving;
-			boolean flag = entityplayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, stack) > 0;
+			boolean flag = entityplayer.capabilities.isCreativeMode;
 			ItemStack itemstack = this.findAmmo(entityplayer);
 
 			int i = this.getMaxItemUseDuration(stack) - timeLeft;
@@ -124,52 +124,19 @@ public class ItemPhoenixBow extends ItemBow {
 				float f = getArrowVelocity(i);
 
 				if ((double) f >= 0.1D) {
-					boolean flag1 = entityplayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, stack) > 0;
-
 					if (!worldIn.isRemote) {
 						EntityPhoenixArrow entityarrow = this.createArrow(worldIn, f * 2.0F, itemstack, entityplayer);
 
-						if (f == 1.0F) {
-							entityarrow.setIsCritical(true);
-						}
-
-						int j = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, stack);
-
-						if (j > 0) {
-							entityarrow.setDamage(entityarrow.getDamage() + (double) j * 0.5D + 0.5D);
-						}
-
-						int k = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, stack);
-
-						if (k > 0) {
-							entityarrow.setKnockbackStrength(k);
-						}
-
-						int l = EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, stack);
-
-						if (l > 0)
-						{
-							entityarrow.setFire(1200);
-						}
+						entityarrow.setDamage(entityarrow.getDamage() + (double) 5 * 0.5D + 0.5D);
 
 						stack.damageItem(1, entityplayer);
 
-						if (flag1) {
-							entityarrow.canBePickedUp = 2;
-						}
+						entityarrow.canBePickedUp = 2;
 
 						worldIn.spawnEntityInWorld(entityarrow);
 					}
 
 					worldIn.playSoundAtEntity(entityLiving, "random.bow", 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
-
-					if (!flag1) {
-						--itemstack.stackSize;
-
-						if (itemstack.stackSize == 0) {
-							entityplayer.inventory.consumeInventoryItem(itemstack.getItem());
-						}
-					}
 				}
 			}
 		}

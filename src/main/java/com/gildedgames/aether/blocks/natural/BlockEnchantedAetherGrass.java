@@ -33,7 +33,7 @@ public class BlockEnchantedAetherGrass extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
-		return side == 1 ? this.blockIconTop : (side == 0 ? BlocksAether.aether_dirt.getBlockTextureFromSide(side) : this.blockIcon);
+		return side == 1 ? this.blockIconTop : (side == 0 ? BlocksAether.aetherDirt.getBlockTextureFromSide(side) : this.blockIcon);
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class BlockEnchantedAetherGrass extends Block {
 		if (side == 1) {
 			return this.blockIconTop;
 		} else if (side == 0) {
-			return BlocksAether.aether_dirt.getBlockTextureFromSide(side);
+			return BlocksAether.aetherDirt.getBlockTextureFromSide(side);
 		}
 
 		return this.blockIcon;

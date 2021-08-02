@@ -493,7 +493,7 @@ public class EntitySunSpirit extends EntityFlying implements IMob, IAetherBoss, 
         if (this.chatWithMe(player)) {
             this.rotary = (180D / Math.PI) * Math.atan2(this.posX - player.posX, this.posZ - player.posZ);
             this.setAttackTarget(player);
-            this.setDoor(BlocksAether.locked_hellfire_stone);
+            this.setDoor(BlocksAether.lockedHellfireStone);
 
             return true;
         }
@@ -553,7 +553,7 @@ public class EntitySunSpirit extends EntityFlying implements IMob, IAetherBoss, 
     @Override
     protected void dropFewItems(boolean var1, int var2) {
         this.entityDropItem(new ItemStack(ItemsAether.dungeonKey, 1, 2), 0.5F);
-        this.entityDropItem(new ItemStack(BlocksAether.sun_altar), 0.5F);
+        this.entityDropItem(new ItemStack(BlocksAether.sunAltar), 0.5F);
     }
 
     @Override
@@ -616,7 +616,7 @@ public class EntitySunSpirit extends EntityFlying implements IMob, IAetherBoss, 
                 for (z = this.originPointZ - 20; z < this.originPointZ + 20; ++z) {
                     Block unlock_block = this.worldObj.getBlock(x, y, z);
 
-                    if (unlock_block == BlocksAether.locked_hellfire_stone || unlock_block == BlocksAether.locked_light_hellfire_stone) {
+                    if (unlock_block == BlocksAether.lockedHellfireStone || unlock_block == BlocksAether.lockedLightHellfireStone) {
                         this.worldObj.setBlock(x, y, z, ((BlockDungeonBase) unlock_block).getUnlockedBlock());
                     }
                 }

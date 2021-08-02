@@ -1,7 +1,7 @@
 package com.gildedgames.aether.client.gui;
 
-import com.gildedgames.aether.client.gui.button.GuiGlowButton;
-import com.gildedgames.aether.client.gui.button.GuiHaloButton;
+import com.gildedgames.aether.client.gui.button.GUIGlowButton;
+import com.gildedgames.aether.client.gui.button.GUIHaloButton;
 import com.gildedgames.aether.network.AetherNetwork;
 import com.gildedgames.aether.network.packets.PacketPerkChanged;
 import com.gildedgames.aether.player.PlayerAether;
@@ -16,12 +16,12 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 
 @SideOnly(Side.CLIENT)
-public class GuiCustomizationScreen extends GuiScreen
+public class GUICustomizationScreen extends GuiScreen
 {
     private final GuiScreen parentScreen;
     private String title;
 
-    public GuiCustomizationScreen(GuiScreen parentScreenIn)
+    public GUICustomizationScreen(GuiScreen parentScreenIn)
     {
         this.parentScreen = parentScreenIn;
     }
@@ -32,12 +32,12 @@ public class GuiCustomizationScreen extends GuiScreen
         int i = 0;
         this.title = I18n.format("gui.options.perk_customization.title");
 
-        this.buttonList.add(new GuiHaloButton(this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 24 * (i >> 1)));
+        this.buttonList.add(new GUIHaloButton(this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 24 * (i >> 1)));
         ++i;
 
         if (AetherRankings.isDeveloper(Minecraft.getMinecraft().thePlayer.getUniqueID()))
         {
-            this.buttonList.add(new GuiGlowButton(this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 24 * (i >> 1)));
+            this.buttonList.add(new GUIGlowButton(this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 24 * (i >> 1)));
             ++i;
         }
 

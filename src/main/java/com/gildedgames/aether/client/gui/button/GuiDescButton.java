@@ -4,11 +4,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 
-public class GuiDescButton extends GuiButton {
+public class GUIDescButton extends GuiButton {
 
 	public String descText;
 
-	public GuiDescButton(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText, String descText) {
+	public GUIDescButton(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText, String descText) {
 		super(buttonId, x, y, widthIn, heightIn, buttonText);
 		this.descText = descText;
 	}

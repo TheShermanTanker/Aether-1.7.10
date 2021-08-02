@@ -27,20 +27,20 @@ public class BlockDungeonTrap extends Block {
 		if (entityIn instanceof EntityPlayer) {
 			world.setBlock(x, y, z, this.pickBlock);
 
-			if (this == BlocksAether.carved_trap) {
+			if (this == BlocksAether.carvedTrap) {
 				EntitySentry sentry = new EntitySentry(world, x + 2D, y + 1D, z + 2D);
 
 				if (!world.isRemote) {
 					world.spawnEntityInWorld(sentry);
 				}
-			} else if (this == BlocksAether.angelic_trap) {
+			} else if (this == BlocksAether.angelicTrap) {
 				EntityValkyrie valkyrie = new EntityValkyrie(world);
 				valkyrie.setPosition(x + 0.5D, y + 1D, z + 0.5D);
 
 				if (!world.isRemote) {
 					world.spawnEntityInWorld(valkyrie);
 				}
-			} else if (this == BlocksAether.hellfire_trap) {
+			} else if (this == BlocksAether.hellfireTrap) {
 				EntityFireMinion minion = new EntityFireMinion(world);
 				minion.setPosition(x + 0.5D, y + 1D, z + 0.5D);
 

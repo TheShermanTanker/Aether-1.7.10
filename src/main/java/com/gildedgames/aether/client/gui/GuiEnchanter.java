@@ -16,13 +16,13 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiEnchanter extends GuiContainer {
+public class GUIEnchanter extends GuiContainer {
 
 	private static final ResourceLocation TEXTURE = Aether.locate("textures/gui/altar.png");
 
 	private TileEntityEnchanter enchanter;
 
-	public GuiEnchanter(InventoryPlayer inventory, TileEntityEnchanter tileEntity) {
+	public GUIEnchanter(InventoryPlayer inventory, TileEntityEnchanter tileEntity) {
 		super(new ContainerEnchanter(inventory, tileEntity));
 		this.enchanter = tileEntity;
 	}

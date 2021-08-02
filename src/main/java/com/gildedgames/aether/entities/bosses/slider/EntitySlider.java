@@ -403,7 +403,7 @@ public class EntitySlider extends EntityFlying implements IAetherBoss {
             {
                 for(int z = this.dungeonZ + 5; z < this.dungeonZ + 11; z++)
                 {
-                    this.worldObj.setBlock(x, y, z, BlocksAether.locked_carved_stone);
+                    this.worldObj.setBlock(x, y, z, BlocksAether.lockedCarvedStone);
                 }
             }
         }
@@ -419,7 +419,7 @@ public class EntitySlider extends EntityFlying implements IAetherBoss {
             {
                 for(int z = this.dungeonZ + 5; z < this.dungeonZ + 11; z++)
                 {
-                    this.worldObj.setBlock(x, y, z, BlocksAether.locked_carved_stone);
+                    this.worldObj.setBlock(x, y, z, BlocksAether.lockedCarvedStone);
                 }
             }
         }
@@ -435,7 +435,7 @@ public class EntitySlider extends EntityFlying implements IAetherBoss {
             {
                 for(int x = this.dungeonX + 5; x < this.dungeonX + 11; x++)
                 {
-                    this.worldObj.setBlock(x, y, z, BlocksAether.locked_carved_stone);
+                    this.worldObj.setBlock(x, y, z, BlocksAether.lockedCarvedStone);
                 }
             }
         }
@@ -451,7 +451,7 @@ public class EntitySlider extends EntityFlying implements IAetherBoss {
             {
                 for(int x = this.dungeonX + 5; x < this.dungeonX + 11; x++)
                 {
-                    this.worldObj.setBlock(x, y, z, BlocksAether.locked_carved_stone);
+                    this.worldObj.setBlock(x, y, z, BlocksAether.lockedCarvedStone);
                 }
             }
         }
@@ -474,7 +474,7 @@ public class EntitySlider extends EntityFlying implements IAetherBoss {
 
     @Override
     protected void dropFewItems(boolean wasRecentlyHit, int lootingModifier) {
-        this.dropItem(Item.getItemFromBlock(BlocksAether.carved_stone), 7 + rand.nextInt(3));
+        this.dropItem(Item.getItemFromBlock(BlocksAether.carvedStone), 7 + rand.nextInt(3));
 
         this.entityDropItem(new ItemStack(ItemsAether.dungeonKey), 0.5F);
     }
@@ -646,7 +646,7 @@ public class EntitySlider extends EntityFlying implements IAetherBoss {
     private void unlockBlock(int x, int y, int z) {
         Block block = this.worldObj.getBlock(x, y, z);
 
-        if (block == BlocksAether.locked_carved_stone || block == BlocksAether.locked_sentry_stone) {
+        if (block == BlocksAether.lockedCarvedStone || block == BlocksAether.lockedSentryStone) {
             this.worldObj.setBlock(x, y, z, ((BlockDungeonBase) block).getUnlockedBlock());
             this.unlockBlock(x + 1, y, z);
             this.unlockBlock(x - 1, y, z);

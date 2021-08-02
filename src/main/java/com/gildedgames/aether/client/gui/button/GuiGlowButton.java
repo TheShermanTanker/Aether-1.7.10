@@ -6,9 +6,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
 
-public class GuiGlowButton extends GuiButton
+public class GUIGlowButton extends GuiButton
 {
-    public GuiGlowButton(int xPos, int yPos)
+    public GUIGlowButton(int xPos, int yPos)
     {
         super(202, xPos, yPos, 150, 20, I18n.format("gui.button.glow"));
     }
